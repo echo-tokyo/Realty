@@ -1,0 +1,18 @@
+.wrapper{
+	height: 100vh;
+	background-image: url('../../../public/bg.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-left: 160px;
+	padding-right: 158px;
+}
+.text{
+	display: flex;
+	flex-direction: column;
+	padding-top: 30vh;
+	gap: 10px;
+}
+.wrapper button{
+	margin-top: 40px;
+}
