@@ -4,6 +4,11 @@
 html, body{
 	font-family: 'Inter', 'Roboto', sans-serif;
 	color: white;
+	background-color: #1C2323;
+}
+.content{
+	padding-left: 160px;
+	padding-right: 160px;
 }
 
 /* Кнопки */
