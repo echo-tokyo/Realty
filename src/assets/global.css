@@ -5,20 +5,32 @@ html, body{
 	font-family: 'Inter', 'Roboto', sans-serif;
 	color: white;
 	background-color: #1C2323;
+	height: 100%;
 }
 .content{
 	padding-left: 160px;
 	padding-right: 160px;
+	min-height: calc(100vh - 130px);
 }
 
 /* Кнопки */
-button{
+button, .next{
 	border: none;
 	height: 55px;
 	width: 160px;
 	background-color: #81DBE1;
-	font-weight: 500;
+	font-weight: 400;
 	letter-spacing: 2px;
+}
+.prev{
+	border: none;
+	height: 55px;
+	width: 160px;
+	background-color: transparent;
+	font-weight: 400;
+	letter-spacing: 2px;
+	border: 1px solid white;
+	color: white;
 }
 
 /* Шрифты */
