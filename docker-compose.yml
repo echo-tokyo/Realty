@@ -1,0 +1,65 @@
+version: '3.8'
+
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: DockerfileBackend
+    container_name: friend_auto_backend
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "5555:5555"
+    networks:
+      proj_network:
+        ipv4_address: 172.16.1.2
+
+  certbot:
+    image: certbot/certbot
+    container_name: friend_auto_certbot
+    env_file:
+      - .env
+    volumes:
+      - certbot_www:/var/www/certbot/:rw
+      - certbot_conf:/etc/letsencrypt/:rw
+    # remove flag "--staging" to make real SSL (not for tests)
+    command: certonly --staging --webroot --webroot-path=/var/www/certbot/ --agree-tos --email ${CERTBOT_EMAIL} -d domain.ru -d www.domain.ru
+    networks:
+      proj_network:
+        ipv4_address: 172.16.1.5
+    depends_on:
+      - nginx
+
+  nginx:
+    build:
+      context: .
+      dockerfile: DockerfileNginx
+    container_name: friend_auto_nginx_front
+    restart: always
+    volumes:
+      - mediafiles:/media:ro
+      - certbot_www:/var/www/certbot/:ro
+      - certbot_conf:/etc/nginx/ssl/:ro
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      proj_network:
+        ipv4_address: 172.16.1.9
+    depends_on:
+      - backend
+
+
+networks:
+  proj_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.1.0/24
+
+
+volumes:
+  certbot_www:
+  certbot_conf:
