@@ -14,6 +14,18 @@
 	margin-top: 50px;
 	gap: 10px;
 }
+.other_city{
+	display: flex;
+	gap: 25px;
+}
+.rnd{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+.fifth_quiz_form .inp{
+	width: 32.77%;
+}
 .inp{
 	display: flex;
 	align-items: center;
@@ -30,7 +42,7 @@
 	transition: 0.4s ease;
 	background-color: #323232;
 }
-.inp input{
+.inp input, .other_city input{
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -40,7 +52,10 @@
 	height: 16px;
 	margin: 0px 0px 0px 25px;
 }
-.inp input:checked{
+.rnd .inp input, .sixth_form input{
+	border-radius: 0%;
+}
+.inp input:checked, .other_city input:checked{
 	background-color: #81DBE1;
 }
 .checked{

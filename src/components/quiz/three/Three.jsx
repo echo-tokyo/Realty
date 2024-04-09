@@ -16,8 +16,8 @@ const Three = () => {
 		</div>
 		<footer>
 			<div className="footer_items">
-				<button className='prev'onClick={() => nav('/second')}>Назад</button>
-				<button className='next'>Вперед</button>
+				<button className='prev' onClick={() => nav('/second')}>Назад</button>
+				<button className='next' onClick={() => nav('/fourth')}>Вперед</button>
 			</div>
 		</footer>
 		</>
