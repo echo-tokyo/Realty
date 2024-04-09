@@ -69,3 +69,4 @@ venv.bak/
 
 # PyCharm
 /.idea/
+/logs/views_logs.log
