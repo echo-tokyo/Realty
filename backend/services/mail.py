@@ -17,7 +17,6 @@ def send_mail(subject: str, text: str) -> bool:
         server.login(user=MAIL_FROM, password=MAIL_PASSWORD)
 
         server.sendmail(from_addr=MAIL_FROM, to_addrs=MAIL_TO_LIST, msg=mail_body)
-        print('Done!')
         return True
 
     except Exception as error:

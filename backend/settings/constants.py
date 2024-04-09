@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-BASEDIR = Path(__name__).parent.parent
+BASEDIR = Path(__file__).parent.parent
 
 MAIL_FROM = getenv('MAIL_FROM')
 MAIL_TO_LIST = [elem.strip() for elem in getenv('MAIL_TO_LIST').split(',')]
@@ -22,5 +22,5 @@ logger = logging.getLogger('flask-server')
 logging.basicConfig(
     level=logging.INFO,
     filename=f'{BASEDIR}/logs/views_logs.log',
-    format='%(levelname)s: (%(module)s, %(lineno)s) -- %(message)s',
+    format='%(levelname)s: [%(asctime)s] ("%(module)s", line %(lineno)s) -- %(message)s',
 )
