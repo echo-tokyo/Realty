@@ -32,6 +32,28 @@ button, .next{
 	border: 1px solid white;
 	color: white;
 }
+input[type='number']{
+	background-color: #5151511a;
+	border: 1px solid white;
+	width: 49.559%;
+	height: 65px;
+	color: white;
+	text-align: center;
+	outline: none;
+	font-size: 16px;
+	font-weight: 200;
+	color: #D2D2D2;
+}
+input[type='number']:hover{
+	transition: 0.4s ease;
+	border: 1px solid #81DBE1;
+	background-color: #323232;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
 /* Шрифты */
 h1{

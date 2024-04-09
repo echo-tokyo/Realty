@@ -1,6 +1,8 @@
 import '../quiz.css'
+import {useNavigate} from 'react-router-dom'
 
 const One = () => {
+	const nav = useNavigate()
 	const isChecked = () => {
 		document.querySelectorAll('.r').forEach(element => {
 			if(element.checked){
@@ -31,8 +33,8 @@ const One = () => {
 		</div>
 		<footer>
 			<div className="footer_items">
-				<button className='prev'>Назад</button>
-				<button className='next'>Вперед</button>
+				<button className='prev' onClick={() => nav('/')}>Назад</button>
+				<button className='next' onClick={() => nav('/second')}>Вперед</button>
 			</div>
 		</footer>
 		</>
