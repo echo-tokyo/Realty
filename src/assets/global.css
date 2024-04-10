@@ -6,6 +6,7 @@ html, body{
 	color: white;
 	background-color: #1C2323;
 	height: 100%;
+	user-select: none;
 }
 .content{
 	padding-left: 160px;

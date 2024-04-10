@@ -11,7 +11,7 @@ const Contacts = () => {
 			</div>
 			<form action="">
 				<input type="number" placeholder='Номер телефона'/>
-				<button onClick={() => nav('/')}>Завершить</button>
+				<button onClick={() => nav('/end')}>Завершить</button>
 				<h3 onClick={() => nav('/sixth')}>Вернуться назад</h3>
 			</form>
 		</div>

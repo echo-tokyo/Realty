@@ -1,0 +1,17 @@
+.end{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	flex-direction: column;
+	gap: 40px;
+}
+.end button{
+	background-color: transparent;
+	font-weight: 400;
+	letter-spacing: 2px;
+	border: 1px solid white;
+	color: white;
+	width: 545px;
+	height: 65px;
+}
