@@ -63,7 +63,7 @@ const Six = () => {
 		<footer>
 			<div className="footer_items">
 				<button className='prev' onClick={() => nav('/fifth')}>Назад</button>
-				<button className='next' onClick={() => nav('/contact')}>Вперед</button>
+				<button className='next' onClick={() => nav('/contacts')}>Вперед</button>
 			</div>
 		</footer>
 		</>

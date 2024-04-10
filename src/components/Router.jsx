@@ -6,6 +6,7 @@ import Three from './quiz/three/Three'
 import Four from './quiz/four/Four'
 import Five from './quiz/five/Five'
 import Six from './quiz/six/Six'
+import Contacts from './contacts/Contacts'
 
 const Router = () => {
 	return (
@@ -18,6 +19,7 @@ const Router = () => {
 				<Route path='/fourth' element={<Four/>}/>
 				<Route path='/fifth' element={<Five/>}/>
 				<Route path='/sixth' element={<Six/>}/>
+				<Route path='/contacts' element={<Contacts/>}/>
 			</Routes>
 		</BrowserRouter>
 	)

@@ -1,0 +1,40 @@
+.contacts{
+	display: flex;
+	justify-content: center;
+	height: 100vh;
+	align-items: center;
+	flex-direction: column;
+	gap: 38px;
+}
+.contacts_text{
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	text-align: center;
+}
+.contacts_text h3{
+	font-size: 20px;
+	font-weight: 400;
+}
+.contacts form{
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	width: 100%;
+	align-items: center;
+}
+.contacts form input, .contacts form button{
+	width: 545px;
+	height: 65px;
+}
+.contacts form input{
+	background-color: transparent;
+	font-weight: 400;
+	letter-spacing: 2px;
+	border: 1px solid white;
+	color: white;
+}
+.contacts form h3{
+	font-size: 12px;
+	cursor: pointer;
+}
