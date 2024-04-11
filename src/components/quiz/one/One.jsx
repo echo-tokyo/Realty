@@ -1,8 +1,13 @@
+import { useEffect } from 'react'
 import '../quiz.css'
 import {useNavigate} from 'react-router-dom'
+import {useSelector} from 'react-redux'
 
 const One = () => {
 	const nav = useNavigate()
+	const get = useSelector((state) => state.quiz.first)
+	console.log(get)
+	
 	const isChecked = () => {
 		document.querySelectorAll('.r').forEach(element => {
 			if(element.checked){
@@ -13,6 +18,16 @@ const One = () => {
 			}
 		})
 	} 
+	
+	useEffect(() => {
+
+		isChecked()
+	}, [])
+
+	const next = () => {
+		
+		nav('/second')
+	}
 	return (
 		<>
 		<div className="content">
@@ -34,7 +49,7 @@ const One = () => {
 		<footer>
 			<div className="footer_items">
 				<button className='prev' onClick={() => nav('/')}>Назад</button>
-				<button className='next' onClick={() => nav('/second')}>Вперед</button>
+				<button className='next' onClick={() => next()}>Вперед</button>
 			</div>
 		</footer>
 		</>

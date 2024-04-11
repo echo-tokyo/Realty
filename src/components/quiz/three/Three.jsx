@@ -11,7 +11,7 @@ const Three = () => {
 				<h3>Укажите ваш бюджет</h3>
 			</div>
 			<form action="" className='quiz_form'>
-				<input type="number" placeholder='руб'/>
+				<input type="number" placeholder='От 3млн рублей' min='3000000'/>
 			</form>
 		</div>
 		<footer>

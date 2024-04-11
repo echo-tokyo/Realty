@@ -34,7 +34,9 @@ button, .next{
 	color: white;
 }
 input[type='number']{
-	background-color: #5151511a;
+	background-color: transparent;
+	font-weight: 400;
+	letter-spacing: 2px;
 	border: 1px solid white;
 	width: 49.559%;
 	height: 65px;
@@ -43,7 +45,6 @@ input[type='number']{
 	outline: none;
 	font-size: 16px;
 	font-weight: 200;
-	color: #D2D2D2;
 }
 input[type='number']:hover{
 	transition: 0.4s ease;
