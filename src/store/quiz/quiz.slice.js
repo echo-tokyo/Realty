@@ -11,11 +11,26 @@ const quizSlice = createSlice({
 		sixth: false
 	},
 	reducers: {
-		setSecond: (state, action) => {
+		setFirst: (state, action) => {
 			state.first = action.payload
+		},
+		setSecond: (state, action) => {
+			state.second = action.payload
+		},
+		setThird: (state, action) => {
+			state.third = action.payload
+		},
+		setFourth: (state, action) => {
+			state.fourth = action.payload
+		},
+		setFifth: (state, action) => {
+			state.fifth = action.payload
+		},
+		setSixth: (state, action) => {
+			state.sixth = action.payload
 		}
 	}
 })
 
-export const {setSecond} = quizSlice.actions
+export const {setFirst, setSecond, setThird, setFourth, setFifth, setSixth} = quizSlice.actions
 export default quizSlice.reducer

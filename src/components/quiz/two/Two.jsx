@@ -1,18 +1,44 @@
+import { useEffect } from 'react'
 import '../quiz.css'
 import {useNavigate} from 'react-router-dom'
+import {useDispatch, useSelector} from 'react-redux'
+import {setSecond} from '../../../store/quiz/quiz.slice'
+
 
 const Two = () => {
 	const nav = useNavigate()
+	const get = useSelector((state) => state.quiz.second)
+	const dispatch = useDispatch()
+
 	const isChecked = () => {
 		document.querySelectorAll('.r').forEach(element => {
 			if(element.checked){
 				element.parentElement.classList.add('checked')
+				dispatch(setSecond(element.id))
 			}
 			else{
 				element.parentElement.classList.remove('checked')
+				element.style.backgroundColor = null
 			}
 		})
 	} 
+	
+	useEffect(() => {
+		if (get !== false) {
+			document.querySelector(`.${get}`).classList.add('checked')
+			document.getElementById(`${get}`).style.backgroundColor = '#81DBE1'
+			document.getElementById(`${get}`).checked = true
+		}
+	}, [])
+	
+	const next = () => {
+		for (let i = 0; i < document.querySelectorAll('.r').length; i++) {
+			if (document.querySelectorAll('.r')[i].checked) {
+				nav('/third')
+			}
+		}
+	}
+
 	return (
 		<>
 		<div className="content">
@@ -34,7 +60,7 @@ const Two = () => {
 		<footer>
 			<div className="footer_items">
 				<button className='prev' onClick={() => nav('/first')}>Назад</button>
-				<button className='next' onClick={() => nav('/third')}>Вперед</button>
+				<button className='next' onClick={() => next()}>Вперед</button>
 			</div>
 		</footer>
 		</>

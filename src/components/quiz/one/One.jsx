@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import '../quiz.css'
 import {useNavigate} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
-import {setSecond} from '../../../store/quiz/quiz.slice'
+import {setFirst} from '../../../store/quiz/quiz.slice'
 
 const One = () => {
 	const nav = useNavigate()
@@ -13,10 +13,11 @@ const One = () => {
 		document.querySelectorAll('.r').forEach(element => {
 			if(element.checked){
 				element.parentElement.classList.add('checked')
-				dispatch(setSecond(element.id))
+				dispatch(setFirst(element.id))
 			}
 			else{
 				element.parentElement.classList.remove('checked')
+				element.style.backgroundColor = null
 			}
 		})
 	} 
@@ -24,13 +25,17 @@ const One = () => {
 	useEffect(() => {
 		if (get !== false) {
 			document.querySelector(`.${get}`).classList.add('checked')
-			document.querySelector(`.${get}`).checked = true
 			document.getElementById(`${get}`).style.backgroundColor = '#81DBE1'
+			document.getElementById(`${get}`).checked = true
 		}
 	}, [])
 	
 	const next = () => {
-		nav('/second')
+		for (let i = 0; i < document.querySelectorAll('.r').length; i++) {
+			if (document.querySelectorAll('.r')[i].checked) {
+				nav('/second')
+			}
+		}
 	}
 
 	return (
