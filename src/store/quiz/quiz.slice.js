@@ -12,7 +12,7 @@ const quizSlice = createSlice({
 	},
 	reducers: {
 		setSecond: (state, action) => {
-			console.log(state, action)
+			state.first = action.payload
 		}
 	}
 })

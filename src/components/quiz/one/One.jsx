@@ -1,17 +1,19 @@
 import { useEffect } from 'react'
 import '../quiz.css'
 import {useNavigate} from 'react-router-dom'
-import {useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
+import {setSecond} from '../../../store/quiz/quiz.slice'
 
 const One = () => {
 	const nav = useNavigate()
 	const get = useSelector((state) => state.quiz.first)
-	console.log(get)
-	
+	const dispatch = useDispatch()
+
 	const isChecked = () => {
 		document.querySelectorAll('.r').forEach(element => {
 			if(element.checked){
 				element.parentElement.classList.add('checked')
+				dispatch(setSecond(element.id))
 			}
 			else{
 				element.parentElement.classList.remove('checked')
@@ -20,14 +22,17 @@ const One = () => {
 	} 
 	
 	useEffect(() => {
-
-		isChecked()
+		if (get !== false) {
+			document.querySelector(`.${get}`).classList.add('checked')
+			document.querySelector(`.${get}`).checked = true
+			document.getElementById(`${get}`).style.backgroundColor = '#81DBE1'
+		}
 	}, [])
-
+	
 	const next = () => {
-		
 		nav('/second')
 	}
+
 	return (
 		<>
 		<div className="content">
