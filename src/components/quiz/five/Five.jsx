@@ -1,26 +1,62 @@
+import { setFifth } from '../../../store/quiz/quiz.slice'
 import '../quiz.css'
 import {useNavigate} from 'react-router-dom'
+import {useDispatch, useSelector} from 'react-redux'
+import { useEffect } from 'react'
 
 const Five = () => {
 	const nav = useNavigate()
+	const dispatch = useDispatch()
+	const get = useSelector((state) => state.quiz.fifth)
+
 	const isChecked = () => {
-		document.querySelectorAll('.r').forEach(element => {
+		const checkedValues = []
+		document.querySelectorAll('.c').forEach(element => {
 			if (element.checked) {
-				element.parentElement.classList.add('checked')
+				if (element.classList.contains('o')){
+					checkedValues.push(element.id)
+					return
+				}
+				else{
+					checkedValues.push(element.id)
+					element.parentElement.classList.add('checked')
+				}
 			} else {
 				element.parentElement.classList.remove('checked')
+				element.style.backgroundColor = null
 			}
 		})
-		if(document.getElementById('inp9').checked){
-			document.getElementById('inp9').checked = false
-		}
+		dispatch(setFifth(checkedValues))
 	}
+
 	const uncheckAll = () => {
 		document.querySelectorAll('.r').forEach(element => {
 			element.checked = false
 			element.parentElement.classList.remove('checked')
+			element.parentElement.style.backgroundColor = null
 		});
 	}
+
+	useEffect(() => {
+		if (get !== false && get.length > 0) {
+			get.forEach(input => {
+				if(get[0] !== 'inp9'){
+					document.querySelector(`.${input}`).classList.add('checked');
+				}
+				document.getElementById(`${input}`).style.backgroundColor = '#81DBE1'
+				document.getElementById(`${input}`).checked = true
+			});
+		}
+	}, [])
+
+	const next = () => {
+		for (let i = 0; i < document.querySelectorAll('.c').length; i++) {
+			if (document.querySelectorAll('.c')[i].checked) {
+				nav('/sixth')
+			}
+		}
+	}
+
 	return (
 		<>
 		<div className="content">
@@ -30,40 +66,43 @@ const Five = () => {
 			</div>
 			<form action="" className='quiz_form fifth_quiz_form'>
 				<div className="other_city">
-					<input type="checkbox" id='inp9' name='radio' onClick={() => uncheckAll()}/>
+					<input type="checkbox" id='inp9' name='radio' className='c o' onClick={() => {
+						uncheckAll()
+						isChecked()
+					}}/>
 					<label htmlFor="inp9"><h3>Из другого города</h3></label>
 				</div>
-				<div className="rnd">
+				<div className="rnd" onChange={() => document.querySelector('.o').checked = false}>
 					<label className="inp inp1"  htmlFor="inp">
-						<input type="checkbox" id='inp' name='radio' className='r' onClick={() => isChecked()}/>
+						<input type="checkbox" id='inp' name='radio' className='r c' onClick={() => isChecked()}/>
 						<h3>Ворошиловский район</h3>
 					</label>
 					<label className="inp inp2"  htmlFor="inp2">
-						<input type="checkbox" id='inp2' name='radio' className='r' onClick={() => isChecked()}/>
+						<input type="checkbox" id='inp2' name='radio' className='r c' onClick={() => isChecked()}/>
 						<h3>Железнодорожный район</h3>
 					</label>
 					<label className="inp inp3"  htmlFor="inp3">
-						<input type="checkbox" id='inp3' name='radio' className='r' onClick={() => isChecked()}/>
+						<input type="checkbox" id='inp3' name='radio' className='r c' onClick={() => isChecked()}/>
 						<h3>Кировский район</h3>
 					</label>
 					<label className="inp inp4"  htmlFor="inp4">
-						<input type="checkbox" id='inp4' name='radio' className='r' onClick={() => isChecked()}/>
+						<input type="checkbox" id='inp4' name='radio' className='r c' onClick={() => isChecked()}/>
 						<h3>Ленинский район</h3>
 					</label>
 					<label className="inp inp5"  htmlFor="inp5">
-						<input type="checkbox" id='inp5' name='radio' className='r' onClick={() => isChecked()}/>
+						<input type="checkbox" id='inp5' name='radio' className='r c' onClick={() => isChecked()}/>
 						<h3>Октябрьский район</h3>
 					</label>
 					<label className="inp inp6"  htmlFor="inp6">
-						<input type="checkbox" id='inp6' name='radio' className='r' onClick={() => isChecked()}/>
+						<input type="checkbox" id='inp6' name='radio' className='r c' onClick={() => isChecked()}/>
 						<h3>Первомайский район</h3>
 					</label>
 					<label className="inp inp7"  htmlFor="inp7">
-						<input type="checkbox" id='inp7' name='radio' className='r' onClick={() => isChecked()}/>
+						<input type="checkbox" id='inp7' name='radio' className='r c' onClick={() => isChecked()}/>
 						<h3>Пролетарский район</h3>
 					</label>
 					<label className="inp inp8"  htmlFor="inp8">
-						<input type="checkbox" id='inp8' name='radio' className='r' onClick={() => isChecked()}/>
+						<input type="checkbox" id='inp8' name='radio' className='r c' onClick={() => isChecked()}/>
 						<h3>Советский район</h3>
 					</label>
 				</div>
@@ -72,7 +111,7 @@ const Five = () => {
 		<footer>
 			<div className="footer_items">
 				<button className='prev' onClick={() => nav('/fourth')}>Назад</button>
-				<button className='next' onClick={() => nav('/sixth')}>Вперед</button>
+				<button className='next' onClick={() => next()}>Вперед</button>
 			</div>
 		</footer>
 		</>
