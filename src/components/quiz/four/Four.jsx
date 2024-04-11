@@ -1,18 +1,43 @@
+import { useEffect } from 'react'
 import '../quiz.css'
 import {useNavigate} from 'react-router-dom'
+import { setFourth } from '../../../store/quiz/quiz.slice'
+import {useDispatch, useSelector} from 'react-redux'
 
 const Four = () => {
 	const nav = useNavigate()
+	const get = useSelector((state) => state.quiz.fourth)
+	const dispatch = useDispatch()
+
 	const isChecked = () => {
 		document.querySelectorAll('.r').forEach(element => {
 			if(element.checked){
 				element.parentElement.classList.add('checked')
+				dispatch(setFourth(element.id))
 			}
 			else{
 				element.parentElement.classList.remove('checked')
+				element.style.backgroundColor = null
 			}
 		})
 	} 
+	
+	useEffect(() => {
+		if (get !== false) {
+			document.querySelector(`.${get}`).classList.add('checked')
+			document.getElementById(`${get}`).style.backgroundColor = '#81DBE1'
+			document.getElementById(`${get}`).checked = true
+		}
+	}, [])
+	
+	const next = () => {
+		for (let i = 0; i < document.querySelectorAll('.r').length; i++) {
+			if (document.querySelectorAll('.r')[i].checked) {
+				nav('/fifth')
+			}
+		}
+	}
+
 	return (
 		<>
 		<div className="content">
@@ -34,7 +59,7 @@ const Four = () => {
 		<footer>
 			<div className="footer_items">
 				<button className='prev' onClick={() => nav('/third')}>Назад</button>
-				<button className='next' onClick={() => nav('/fifth')}>Вперед</button>
+				<button className='next' onClick={() => next()}>Вперед</button>
 			</div>
 		</footer>
 		</>
