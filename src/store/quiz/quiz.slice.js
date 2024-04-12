@@ -8,7 +8,7 @@ const quizSlice = createSlice({
 		third: false, 
 		fourth: false,
 		fifth: false,
-		sixth: false
+		sixth: false,
 	},
 	reducers: {
 		setFirst: (state, action) => {
@@ -28,7 +28,7 @@ const quizSlice = createSlice({
 		},
 		setSixth: (state, action) => {
 			state.sixth = action.payload
-		}
+		},
 	}
 })
 

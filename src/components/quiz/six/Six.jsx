@@ -8,41 +8,33 @@ const Six = () => {
 	const nav = useNavigate()
 	const dispatch = useDispatch()
 	const get = useSelector((state) => state.quiz.sixth)
-
-	const isChecked = () => {
-		let count = 0
-		const checkedValues = []
-		document.querySelectorAll('.r').forEach(element => {
-			if (element.checked) {
-				element.parentElement.classList.add('checked')
-				checkedValues.push(element.id)
-				count++
-			} else {
-				element.parentElement.classList.remove('checked');
-				element.style.backgroundColor = null
+	
+	const isChecked = (e) => {
+		const arr = []
+		let checkedCount = 0;
+		const checkboxes = document.querySelectorAll('.r');
+		
+		checkboxes.forEach(checkbox => {
+			if (checkbox.checked) {
+				checkedCount++;
+				arr.push(checkbox.id)
+			}
+			else{
+				checkbox.style.backgroundColor = null
 			}
 		})
-		if (count > 2) {
-			document.querySelectorAll('.r').forEach(element => {
-				if (!element.checked) {
-					element.disabled = true; 
-				}
-			})
-		} 
-		else {
-			document.querySelectorAll('.r').forEach(element => {
-				element.disabled = false
-			})
+		
+		if (checkedCount > 3) {
+			e.preventDefault();
+			alert('Можно выбрать только три варианта');
+			return false;
 		}
-		dispatch(setSixth(checkedValues))
-	}
+		dispatch(setSixth(arr))
+	}	  
 
 	useEffect(() => {
 		if (get !== false && get.length > 0) {
 			get.forEach(input => {
-				if(get[0] !== 'inp9'){
-					document.querySelector(`.${input}`).classList.add('checked');
-				}
 				document.getElementById(`${input}`).style.backgroundColor = '#81DBE1'
 				document.getElementById(`${input}`).checked = true
 			});
@@ -65,27 +57,27 @@ const Six = () => {
 			</div>
 			<form action="" className='quiz_form sixth_form'>
 				<label className="inp inp1"  htmlFor="inp">
-					<input type="checkbox" id='inp' name='radio' className='r' onClick={isChecked}/>
+					<input type="checkbox" id='inp' name='radio' className='r' onClick={(e) => isChecked(e)}/>
 					<h3>Наличка</h3>
 				</label>
 				<label className="inp inp2"  htmlFor="inp2">
-					<input type="checkbox" id='inp2' name='radio' className='r' onClick={isChecked}/>
+					<input type="checkbox" id='inp2' name='radio' className='r' onClick={(e) => isChecked(e)}/>
 					<h3>Ипотека</h3>
 				</label>
 				<label className="inp inp3"  htmlFor="inp3">
-					<input type="checkbox" id='inp3' name='radio' className='r' onClick={isChecked}/>
+					<input type="checkbox" id='inp3' name='radio' className='r' onClick={(e) => isChecked(e)}/>
 					<h3>Материнский капитал</h3>
 				</label>
 				<label className="inp inp4"  htmlFor="inp4">
-					<input type="checkbox" id='inp4' name='radio' className='r' onClick={isChecked}/>
+					<input type="checkbox" id='inp4' name='radio' className='r' onClick={(e) => isChecked(e)}/>
 					<h3>Военная ипотека</h3>
 				</label>
 				<label className="inp inp5"  htmlFor="inp5">
-					<input type="checkbox" id='inp5' name='radio' className='r' onClick={isChecked}/>
+					<input type="checkbox" id='inp5' name='radio' className='r' onClick={(e) => isChecked(e)}/>
 					<h3>Херсонский сертификат</h3>
 				</label>
 				<label className="inp inp6"  htmlFor="inp6">
-					<input type="checkbox" id='inp6' name='radio' className='r' onClick={isChecked}/>
+					<input type="checkbox" id='inp6' name='radio' className='r' onClick={(e) => isChecked(e)}/>
 					<h3>Сельский сертификат</h3>
 				</label>
 			</form>

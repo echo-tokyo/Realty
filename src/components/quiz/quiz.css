@@ -42,6 +42,9 @@
 	transition: 0.4s ease;
 	background-color: #323232;
 }
+.inp input:checked, .other_city input:checked{
+	background-color: #81DBE1;
+}
 .inp input, .other_city input{
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -51,12 +54,10 @@
 	width: 16px;
 	height: 16px;
 	margin: 0px 0px 0px 25px;
+	background-color: transparent;
 }
 .rnd .inp input, .sixth_form input{
 	border-radius: 0%;
-}
-.inp input:checked, .other_city input:checked{
-	background-color: #81DBE1;
 }
 .checked{
 	border: 1px solid #81DBE1;
