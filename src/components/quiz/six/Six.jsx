@@ -1,16 +1,25 @@
+import { useEffect } from 'react'
 import '../quiz.css'
 import {useNavigate} from 'react-router-dom'
+import {useDispatch, useSelector} from 'react-redux'
+import { setSixth } from '../../../store/quiz/quiz.slice'
 
 const Six = () => {
 	const nav = useNavigate()
+	const dispatch = useDispatch()
+	const get = useSelector((state) => state.quiz.sixth)
+
 	const isChecked = () => {
 		let count = 0
+		const checkedValues = []
 		document.querySelectorAll('.r').forEach(element => {
 			if (element.checked) {
 				element.parentElement.classList.add('checked')
+				checkedValues.push(element.id)
 				count++
 			} else {
 				element.parentElement.classList.remove('checked');
+				element.style.backgroundColor = null
 			}
 		})
 		if (count > 2) {
@@ -24,6 +33,27 @@ const Six = () => {
 			document.querySelectorAll('.r').forEach(element => {
 				element.disabled = false
 			})
+		}
+		dispatch(setSixth(checkedValues))
+	}
+
+	useEffect(() => {
+		if (get !== false && get.length > 0) {
+			get.forEach(input => {
+				if(get[0] !== 'inp9'){
+					document.querySelector(`.${input}`).classList.add('checked');
+				}
+				document.getElementById(`${input}`).style.backgroundColor = '#81DBE1'
+				document.getElementById(`${input}`).checked = true
+			});
+		}
+	}, [])
+
+	const next = () => {
+		for (let i = 0; i < document.querySelectorAll('.r').length; i++) {
+			if (document.querySelectorAll('.r')[i].checked) {
+				nav('/contacts')
+			}
 		}
 	}
 	return (
@@ -63,7 +93,7 @@ const Six = () => {
 		<footer>
 			<div className="footer_items">
 				<button className='prev' onClick={() => nav('/fifth')}>Назад</button>
-				<button className='next' onClick={() => nav('/contacts')}>Вперед</button>
+				<button className='next' onClick={() => next()}>Вперед</button>
 			</div>
 		</footer>
 		</>
