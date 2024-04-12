@@ -18,14 +18,17 @@ const Six = () => {
 			if (checkbox.checked) {
 				checkedCount++;
 				arr.push(checkbox.id)
+				checkbox.parentElement.classList.add('checked')
 			}
 			else{
 				checkbox.style.backgroundColor = null
+				checkbox.parentElement.classList.remove('checked')
 			}
 		})
 		
 		if (checkedCount > 3) {
 			e.preventDefault();
+			e.target.parentElement.classList.remove('checked')
 			alert('Можно выбрать только три варианта');
 			return false;
 		}
@@ -36,6 +39,7 @@ const Six = () => {
 		if (get !== false && get.length > 0) {
 			get.forEach(input => {
 				document.getElementById(`${input}`).style.backgroundColor = '#81DBE1'
+				document.querySelector(`.${input}`).classList.add('checked')
 				document.getElementById(`${input}`).checked = true
 			});
 		}
