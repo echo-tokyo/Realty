@@ -6,7 +6,7 @@ import { setThird } from '../../../store/quiz/quiz.slice'
 
 const Three = () => {
 	const nav = useNavigate()
-	const get = useSelector((state) => state.quiz.third)
+	const get = useSelector((state) => state.quiz.budget)
 	const dispatch = useDispatch()
 
 	const isChange = () => {

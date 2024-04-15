@@ -7,7 +7,7 @@ import { setSixth } from '../../../store/quiz/quiz.slice'
 const Six = () => {
 	const nav = useNavigate()
 	const dispatch = useDispatch()
-	const get = useSelector((state) => state.quiz.sixth)
+	const get = useSelector((state) => state.quiz.payment)
 	
 	const isChecked = (e) => {
 		const arr = []

@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from 'react-redux'
 
 const Four = () => {
 	const nav = useNavigate()
-	const get = useSelector((state) => state.quiz.fourth)
+	const get = useSelector((state) => state.quiz.renovatedOrNot)
 	const dispatch = useDispatch()
 
 	const isChecked = () => {

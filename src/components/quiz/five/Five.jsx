@@ -7,7 +7,7 @@ import { useEffect } from 'react'
 const Five = () => {
 	const nav = useNavigate()
 	const dispatch = useDispatch()
-	const get = useSelector((state) => state.quiz.fifth)
+	const get = useSelector((state) => state.quiz.districts)
 
 	const isChecked = () => {
 		const checkedValues = []

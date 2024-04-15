@@ -6,7 +6,7 @@ import {setFirst} from '../../../store/quiz/quiz.slice'
 
 const One = () => {
 	const nav = useNavigate()
-	const get = useSelector((state) => state.quiz.first)
+	const get = useSelector((state) => state.quiz.apartmentOrHouse)
 	const dispatch = useDispatch()
 
 	const isChecked = () => {

@@ -7,7 +7,7 @@ import {setSecond} from '../../../store/quiz/quiz.slice'
 
 const Two = () => {
 	const nav = useNavigate()
-	const get = useSelector((state) => state.quiz.second)
+	const get = useSelector((state) => state.quiz.newBuildingOrResale)
 	const dispatch = useDispatch()
 
 	const isChecked = () => {

@@ -3,31 +3,31 @@ import {createSlice} from '@reduxjs/toolkit'
 const quizSlice = createSlice({
 	name: 'quiz',
 	initialState: {
-		first: false,
-		second: false,
-		third: false, 
-		fourth: false,
-		fifth: false,
-		sixth: false,
+		apartmentOrHouse: false,
+		newBuildingOrResale: false,
+		budget: false, 
+		renovatedOrNot: false,
+		districts: false,
+		payment: false,
 	},
 	reducers: {
 		setFirst: (state, action) => {
-			state.first = action.payload
+			state.apartmentOrHouse = action.payload
 		},
 		setSecond: (state, action) => {
-			state.second = action.payload
+			state.newBuildingOrResale = action.payload
 		},
 		setThird: (state, action) => {
-			state.third = action.payload
+			state.budget = action.payload
 		},
 		setFourth: (state, action) => {
-			state.fourth = action.payload
+			state.renovatedOrNot = action.payload
 		},
 		setFifth: (state, action) => {
-			state.fifth = action.payload
+			state.districts = action.payload
 		},
 		setSixth: (state, action) => {
-			state.sixth = action.payload
+			state.payment = action.payload
 		},
 	}
 })
