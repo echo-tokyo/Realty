@@ -7,11 +7,23 @@ html, body{
 	background-color: #1C2323;
 	height: 100%;
 	user-select: none;
+	overflow: hidden;
 }
 .content{
 	padding-left: 160px;
 	padding-right: 160px;
 	min-height: calc(100vh - 130px);
+}
+
+/* Анимации */
+.element-animation {
+	opacity: 0;
+	transform: translateX(20px);
+}
+.element-animation.element-show {
+	opacity: 1;
+	transition: all 1s;
+	transform: translateX(0%);
 }
 
 /* Кнопки */
@@ -35,7 +47,7 @@ button, .next{
 }
 input[type='number']{
 	background-color: transparent;
-	font-weight: 400;
+	font-weight: 200;
 	letter-spacing: 2px;
 	border: 1px solid white;
 	width: 49.559%;
@@ -44,7 +56,6 @@ input[type='number']{
 	text-align: center;
 	outline: none;
 	font-size: 16px;
-	font-weight: 200;
 }
 input[type='number']:hover{
 	transition: 0.4s ease;

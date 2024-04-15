@@ -40,7 +40,7 @@ const Four = () => {
 
 	return (
 		<>
-		<div className="content">
+		<div className="content element-animation">
 			<div className="quiz_text">
 				<h1>Вопрос 4 из 6</h1>
 				<h3>Выберите подходящий вариант</h3>

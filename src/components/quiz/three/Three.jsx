@@ -27,7 +27,7 @@ const Three = () => {
 
 	return (
 		<>
-		<div className="content">
+		<div className="content element-animation">
 			<div className="quiz_text">
 				<h1>Вопрос 3 из 6</h1>
 				<h3>Укажите ваш бюджет</h3>

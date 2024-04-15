@@ -14,50 +14,48 @@ const Contacts = () => {
 		newObj.renovatedOrNot = obj.renovatedOrNot === 'inp' ? 'с ремонтом' : 'без ремонта';
 		newObj.phone = parseInt(document.querySelector('.phone').value)
 		
-		if(obj.districts !== false && obj.districts !== false){
-			newObj.districts = obj.districts.map(item => {
-				switch (item) {
-					case 'inp':
-						return 'Ворошиловский район';
-					case 'inp2':
-						return 'Железнодорожный район';
-					case 'inp3':
-						return 'Кировский район';
-					case 'inp4':
-						return 'Ленинский район';
-					case 'inp5':
-						return 'Октябрьский район';
-					case 'inp6':
-						return 'Первомайский район';
-					case 'inp7':
-						return 'Пролетарский район';
-					case 'inp8':
-						return 'Советский район';
-					case 'inp9':
-						return 'Из другого города';
-					default:
-						return item;
-				}
-			})
-			newObj.payment = obj.payment.map(item => {
-				switch (item) {
-					case 'inp':
-						return 'Наличка';
-					case 'inp2':
-						return 'Ипотека';
-					case 'inp3':
-						return 'Материнский капитал';
-					case 'inp4':
-						return 'Военная ипотека';
-					case 'inp5':
-						return 'Херсонский сертификат';
-					case 'inp6':
-						return 'Сельский сертификат';
-					default:
-						return item;
-				}
-			})
-		}
+		newObj.districts = obj.districts.map(item => {
+			switch (item) {
+				case 'inp':
+					return 'Ворошиловский район';
+				case 'inp2':
+					return 'Железнодорожный район';
+				case 'inp3':
+					return 'Кировский район';
+				case 'inp4':
+					return 'Ленинский район';
+				case 'inp5':
+					return 'Октябрьский район';
+				case 'inp6':
+					return 'Первомайский район';
+				case 'inp7':
+					return 'Пролетарский район';
+				case 'inp8':
+					return 'Советский район';
+				case 'inp9':
+					return 'Из другого города';
+				default:
+					return item;
+			}
+		})
+		newObj.payment = obj.payment.map(item => {
+			switch (item) {
+				case 'inp':
+					return 'Наличка';
+				case 'inp2':
+					return 'Ипотека';
+				case 'inp3':
+					return 'Материнский капитал';
+				case 'inp4':
+					return 'Военная ипотека';
+				case 'inp5':
+					return 'Херсонский сертификат';
+				case 'inp6':
+					return 'Сельский сертификат';
+				default:
+					return item;
+			}
+		})
 
 		return newObj;
 	}
@@ -66,11 +64,14 @@ const Contacts = () => {
 		e.preventDefault()
 		// eslint-disable-next-line no-useless-escape
 		if(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(document.querySelector('.phone').value)) {
-			console.log(transformData(quizData))
+			if(!Object.values(quizData).some(value => !value)){
+				console.log(transformData(quizData))
+			} else{
+				nav('/')
+			}
 			document.querySelector('.phone').style.border = null
 		}
 		else{
-			console.log('first')
 			document.querySelector('.phone').style.border = '2px solid red'
 		}
 	}
