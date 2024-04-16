@@ -33,7 +33,7 @@
 	border: 1px solid white;
 	letter-spacing: 2px;
 	height: 65px;
-	width: 49.559%;
+	width: calc(50% - 5px);
 }
 .inp h3{
 	color: white;
