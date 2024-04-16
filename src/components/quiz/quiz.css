@@ -77,7 +77,16 @@ footer{
 	height: 100%;
 	gap: 15px;
 }
-
+@media (max-height: 650px) {
+	.quiz_text{
+		padding-top: 50px;
+	}
+}
+@media (max-height: 530px) {
+	.quiz_text{
+		padding-top: 5px;
+	}
+}
 @media (max-width: 1300px) {
 	.fifth_quiz_form .inp{
 		width: calc(50% - 5px);

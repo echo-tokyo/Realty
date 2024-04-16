@@ -7,12 +7,22 @@ html, body{
 	background-color: #1C2323;
 	height: 100%;
 	user-select: none;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 .content{
 	padding-left: 160px;
 	padding-right: 160px;
 	min-height: calc(100vh - 130px);
+}
+body::-webkit-scrollbar {
+	width: 3px;
+}
+body::-webkit-scrollbar-track {
+	background: none; 
+}
+body::-webkit-scrollbar-thumb {
+	background-color: #ffffff;
+	border-radius: 20px;
 }
 
 /* Анимации */
@@ -79,6 +89,7 @@ h3{
 	font-weight: 200;
 	color: #D2D2D2;
 }
+
 @media (max-width: 1500px) {
 	h1{
 		font-size: 30px;
