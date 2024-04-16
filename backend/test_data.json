@@ -1,0 +1,9 @@
+{
+  "apartmentOrHouse": "квартира",
+  "budget": 100500,
+  "districts": ["Октябрьский", "Ленинский"],
+  "newBuildingOrResale": "вторичка",
+  "payment": ["Ипотека", "Сельский сертификат"],
+  "phone": 88005553535,
+  "renovatedOrNot": "без ремонта"
+}
