@@ -78,35 +78,35 @@ const Five = () => {
 				<div className="rnd">
 					<label className="inp inp1"  htmlFor="inp">
 						<input type="checkbox" id='inp' name='radio' className='r c' onClick={(e) => isChecked(e)}/>
-						<h3>Ворошиловский район</h3>
+						<h3>Ворошиловский</h3>
 					</label>
 					<label className="inp inp2"  htmlFor="inp2">
 						<input type="checkbox" id='inp2' name='radio' className='r c' onClick={(e) => isChecked(e)}/>
-						<h3>Железнодорожный район</h3>
+						<h3>Железнодорожный</h3>
 					</label>
 					<label className="inp inp3"  htmlFor="inp3">
 						<input type="checkbox" id='inp3' name='radio' className='r c' onClick={(e) => isChecked(e)}/>
-						<h3>Кировский район</h3>
+						<h3>Кировский</h3>
 					</label>
 					<label className="inp inp4"  htmlFor="inp4">
 						<input type="checkbox" id='inp4' name='radio' className='r c' onClick={(e) => isChecked(e)}/>
-						<h3>Ленинский район</h3>
+						<h3>Ленинский</h3>
 					</label>
 					<label className="inp inp5"  htmlFor="inp5">
 						<input type="checkbox" id='inp5' name='radio' className='r c' onClick={(e) => isChecked(e)}/>
-						<h3>Октябрьский район</h3>
+						<h3>Октябрьский</h3>
 					</label>
 					<label className="inp inp6"  htmlFor="inp6">
 						<input type="checkbox" id='inp6' name='radio' className='r c' onClick={(e) => isChecked(e)}/>
-						<h3>Первомайский район</h3>
+						<h3>Первомайский</h3>
 					</label>
 					<label className="inp inp7"  htmlFor="inp7">
 						<input type="checkbox" id='inp7' name='radio' className='r c' onClick={(e) => isChecked(e)}/>
-						<h3>Пролетарский район</h3>
+						<h3>Пролетарский</h3>
 					</label>
 					<label className="inp inp8"  htmlFor="inp8">
 						<input type="checkbox" id='inp8' name='radio' className='r c' onClick={(e) => isChecked(e)}/>
-						<h3>Советский район</h3>
+						<h3>Советский</h3>
 					</label>
 				</div>
 			</form>
