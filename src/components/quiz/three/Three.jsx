@@ -20,7 +20,7 @@ const Three = () => {
 	}, [])
 
 	const next = () => {
-		if (document.querySelector('input').value > 3000000){
+		if (document.querySelector('input').value >= 3000000){
 			nav('/fourth')
 		}
 	}

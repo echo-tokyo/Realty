@@ -9,7 +9,10 @@ const Five = () => {
 	const dispatch = useDispatch()
 	const get = useSelector((state) => state.quiz.districts)
 
-	const isChecked = () => {
+	const isChecked = (e) => {
+		if(!e.target.classList.contains('o')){
+			document.querySelector('.o').checked = false
+		}
 		const checkedValues = []
 		document.querySelectorAll('.c').forEach(element => {
 			if (element.checked) {
@@ -66,43 +69,43 @@ const Five = () => {
 			</div>
 			<form action="" className='quiz_form fifth_quiz_form'>
 				<div className="other_city">
-					<input type="checkbox" id='inp9' name='radio' className='c o' onClick={() => {
+					<input type="checkbox" id='inp9' name='radio' className='c o' onClick={(e) => {
 						uncheckAll()
-						isChecked()
+						isChecked(e)
 					}}/>
 					<label htmlFor="inp9"><h3>Из другого города</h3></label>
 				</div>
-				<div className="rnd" onChange={() => document.querySelector('.o').checked = false}>
+				<div className="rnd">
 					<label className="inp inp1"  htmlFor="inp">
-						<input type="checkbox" id='inp' name='radio' className='r c' onClick={() => isChecked()}/>
+						<input type="checkbox" id='inp' name='radio' className='r c' onClick={(e) => isChecked(e)}/>
 						<h3>Ворошиловский район</h3>
 					</label>
 					<label className="inp inp2"  htmlFor="inp2">
-						<input type="checkbox" id='inp2' name='radio' className='r c' onClick={() => isChecked()}/>
+						<input type="checkbox" id='inp2' name='radio' className='r c' onClick={(e) => isChecked(e)}/>
 						<h3>Железнодорожный район</h3>
 					</label>
 					<label className="inp inp3"  htmlFor="inp3">
-						<input type="checkbox" id='inp3' name='radio' className='r c' onClick={() => isChecked()}/>
+						<input type="checkbox" id='inp3' name='radio' className='r c' onClick={(e) => isChecked(e)}/>
 						<h3>Кировский район</h3>
 					</label>
 					<label className="inp inp4"  htmlFor="inp4">
-						<input type="checkbox" id='inp4' name='radio' className='r c' onClick={() => isChecked()}/>
+						<input type="checkbox" id='inp4' name='radio' className='r c' onClick={(e) => isChecked(e)}/>
 						<h3>Ленинский район</h3>
 					</label>
 					<label className="inp inp5"  htmlFor="inp5">
-						<input type="checkbox" id='inp5' name='radio' className='r c' onClick={() => isChecked()}/>
+						<input type="checkbox" id='inp5' name='radio' className='r c' onClick={(e) => isChecked(e)}/>
 						<h3>Октябрьский район</h3>
 					</label>
 					<label className="inp inp6"  htmlFor="inp6">
-						<input type="checkbox" id='inp6' name='radio' className='r c' onClick={() => isChecked()}/>
+						<input type="checkbox" id='inp6' name='radio' className='r c' onClick={(e) => isChecked(e)}/>
 						<h3>Первомайский район</h3>
 					</label>
 					<label className="inp inp7"  htmlFor="inp7">
-						<input type="checkbox" id='inp7' name='radio' className='r c' onClick={() => isChecked()}/>
+						<input type="checkbox" id='inp7' name='radio' className='r c' onClick={(e) => isChecked(e)}/>
 						<h3>Пролетарский район</h3>
 					</label>
 					<label className="inp inp8"  htmlFor="inp8">
-						<input type="checkbox" id='inp8' name='radio' className='r c' onClick={() => isChecked()}/>
+						<input type="checkbox" id='inp8' name='radio' className='r c' onClick={(e) => isChecked(e)}/>
 						<h3>Советский район</h3>
 					</label>
 				</div>

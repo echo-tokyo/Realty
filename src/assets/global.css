@@ -60,7 +60,7 @@ input[type='number']{
 input[type='number']:hover{
 	transition: 0.4s ease;
 	border: 1px solid #81DBE1;
-	background-color: #323232;
+	background-color: #161c1c;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
