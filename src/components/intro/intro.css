@@ -16,3 +16,39 @@
 .wrapper button{
 	margin-top: 40px;
 }
+
+@media (max-width: 1500px){
+	.wrapper{
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+}
+@media (max-width: 800px){
+	.wrapper{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.wrapper button{
+		margin-top: 20px;
+	}
+}
+@media (max-width: 500px){
+	.wrapper{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+@media (max-height: 200px){
+	.text{
+		padding-top: 20px;
+	}
+}
+@media (max-height: 155px){
+	.text{
+		padding-top: 0px;
+	}
+}
