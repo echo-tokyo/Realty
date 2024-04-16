@@ -1,0 +1,4 @@
+/.idea/
+
+/backend/logs/views_logs.log
+.env
