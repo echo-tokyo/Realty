@@ -85,8 +85,8 @@ button:hover{
 .prev:hover{
 	background-color: #ffffff0f;
 }
-button:hover{
-	background-color: #a6dcdf;
+.next:hover, .wrapper button:hover, .contacts button:hover{
+	background-color: #6ec4c9;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
