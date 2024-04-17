@@ -37,6 +37,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* Кнопки */
+button, input{
+	transition: all linear .15s;
+    -webkit-transition: all linear .15s;
+	cursor: pointer;
+}
 button, .next{
 	border: none;
 	height: 55px;
@@ -56,6 +61,7 @@ button, .next{
 	color: white;
 }
 input[type='number']{
+	cursor:text;
 	background-color: transparent;
 	font-weight: 200;
 	letter-spacing: 2px;
@@ -71,6 +77,16 @@ input[type='number']:hover{
 	transition: 0.4s ease;
 	border: 1px solid #81DBE1;
 	background-color: #161c1c;
+}
+button:hover{
+	transition: 0.4s ease;
+	transform: scale(1.02);
+}
+.prev:hover{
+	background-color: #ffffff0f;
+}
+button:hover{
+	background-color: #a6dcdf;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
