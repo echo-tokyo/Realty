@@ -110,6 +110,9 @@ input[type='number'], .prev, button, .next{
 	}
 }
 @media (max-width: 800px) {
+	.wrapper h1{
+		font-size: 26px;
+	}
 	.prev, .next{
 		width: 90px;
 	}

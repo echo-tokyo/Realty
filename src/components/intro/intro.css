@@ -32,23 +32,20 @@
 		padding-left: 50px;
 		padding-right: 50px;
 	}
+	.wrapper button{
+		margin-top: 30px;
+	}
 }
 @media (max-width: 800px){
 	.wrapper{
+		text-align: center;
 		padding-left: 20px;
 		padding-right: 20px;
 	}
+	/* .text{
+		padding-top: 20vh;
+	} */
 	.wrapper button{
 		margin-top: 20px;
-	}
-}
-@media (max-width: 500px){
-	.wrapper{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		padding-left: 10px;
-		padding-right: 10px;
 	}
 }
