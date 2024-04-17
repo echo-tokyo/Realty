@@ -32,10 +32,16 @@ const Two = () => {
 	}, [])
 	
 	const next = () => {
-		for (let i = 0; i < document.querySelectorAll('.r').length; i++) {
-			if (document.querySelectorAll('.r')[i].checked) {
-				nav('/third')
-			}
+		let isChecked = false;
+		for (let i = 0; i < document.querySelectorAll('.r').length; i++) { 
+			if (document.querySelectorAll('.r')[i].checked) { 
+				isChecked = true;
+				nav('/third');
+				break
+			} 
+		}
+		if (!isChecked) { 
+			alert('Выберите хотя бы один вариант'); 
 		}
 	}
 

@@ -46,10 +46,16 @@ const Six = () => {
 	}, [])
 
 	const next = () => {
-		for (let i = 0; i < document.querySelectorAll('.r').length; i++) {
-			if (document.querySelectorAll('.r')[i].checked) {
-				nav('/contacts')
-			}
+		let isChecked = false;
+		for (let i = 0; i < document.querySelectorAll('.r').length; i++) { 
+			if (document.querySelectorAll('.r')[i].checked) { 
+				isChecked = true;
+				nav('/contacts');
+				break
+			} 
+		}
+		if (!isChecked) { 
+			alert('Выберите хотя бы один вариант'); 
 		}
 	}
 	return (

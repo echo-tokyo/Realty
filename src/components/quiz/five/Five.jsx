@@ -53,10 +53,16 @@ const Five = () => {
 	}, [])
 
 	const next = () => {
-		for (let i = 0; i < document.querySelectorAll('.c').length; i++) {
-			if (document.querySelectorAll('.c')[i].checked) {
-				nav('/sixth')
-			}
+		let isChecked = false;
+		for (let i = 0; i < document.querySelectorAll('.c').length; i++) { 
+			if (document.querySelectorAll('.c')[i].checked) { 
+				isChecked = true;
+				nav('/sixth');
+				break
+			} 
+		}
+		if (!isChecked) { 
+			alert('Выберите хотя бы один вариант'); 
 		}
 	}
 

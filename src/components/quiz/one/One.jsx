@@ -31,10 +31,16 @@ const One = () => {
 	}, [])
 	
 	const next = () => {
-		for (let i = 0; i < document.querySelectorAll('.r').length; i++) {
-			if (document.querySelectorAll('.r')[i].checked) {
-				nav('/second')
-			}
+		let isChecked = false;
+		for (let i = 0; i < document.querySelectorAll('.r').length; i++) { 
+			if (document.querySelectorAll('.r')[i].checked) { 
+				isChecked = true;
+				nav('/second');
+				break
+			} 
+		}
+		if (!isChecked) { 
+			alert('Выберите хотя бы один вариант'); 
 		}
 	}
 

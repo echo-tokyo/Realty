@@ -23,6 +23,9 @@ const Three = () => {
 		if (document.querySelector('input').value >= 3000000){
 			nav('/fourth')
 		}
+		else{
+			alert('Укажите число от трёх миллионов рублей')
+		}
 	}
 
 	return (

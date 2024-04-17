@@ -31,10 +31,16 @@ const Four = () => {
 	}, [])
 	
 	const next = () => {
-		for (let i = 0; i < document.querySelectorAll('.r').length; i++) {
-			if (document.querySelectorAll('.r')[i].checked) {
-				nav('/fifth')
-			}
+		let isChecked = false;
+		for (let i = 0; i < document.querySelectorAll('.r').length; i++) { 
+			if (document.querySelectorAll('.r')[i].checked) { 
+				isChecked = true;
+				nav('/fifth');
+				break
+			} 
+		}
+		if (!isChecked) { 
+			alert('Выберите хотя бы один элемент'); 
 		}
 	}
 
