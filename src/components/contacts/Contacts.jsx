@@ -66,6 +66,7 @@ const Contacts = () => {
 		if(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(document.querySelector('.phone').value)) {
 			if(!Object.values(quizData).some(value => !value)){
 				console.log(transformData(quizData))
+				nav('/end')
 			} else{
 				nav('/')
 			}

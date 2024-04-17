@@ -5,7 +5,9 @@ const End = () => {
 	return (
 		<div className="end">
 			<h1>Готово 🎉</h1>
-			<Link to='/'><button>Вернуться назад</button></Link>
+			<div className="btn">
+				<Link to='/'><button>Вернуться назад</button></Link>
+			</div>
 		</div>
 	)
 }

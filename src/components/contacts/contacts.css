@@ -38,3 +38,9 @@
 	font-size: 12px;
 	cursor: pointer;
 }
+
+@media (max-width: 800px) {
+	.contacts form input, .contacts form button{
+		width: 100%;
+	}
+}

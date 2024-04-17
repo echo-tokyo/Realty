@@ -119,7 +119,7 @@ input[type='number'], .prev, button, .next{
 	.quiz_text h3{
 		font-size: 16px;
 	}
-	.content, footer{
+	.content, footer, .contacts form, .end{
 		padding-left: 30px;
 		padding-right: 30px;
 	}

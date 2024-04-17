@@ -15,3 +15,12 @@
 	width: 545px;
 	height: 65px;
 }
+
+@media (max-width: 800px) {
+	.btn{
+		width: 100%;
+	}
+	.end button{
+		width: 100%;
+	}
+}
