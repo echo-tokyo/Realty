@@ -55,7 +55,7 @@ const Six = () => {
 	return (
 		<>
 		<div className="content element-animation">
-			<div className="quiz_text">
+			<div className="quiz_text sixth_quiz_text">
 				<h1>Вопрос 6 из 6</h1>
 				<h3>Выберите до трёх способов рассчета</h3>
 			</div>

@@ -63,7 +63,7 @@ const Five = () => {
 	return (
 		<>
 		<div className="content element-animation">
-			<div className="quiz_text">
+			<div className="quiz_text fifth_quiz_text">
 				<h1>Вопрос 5 из 6</h1>
 				<h3>Укажите желаемые районы в Ростове-на-Дону</h3>
 			</div>

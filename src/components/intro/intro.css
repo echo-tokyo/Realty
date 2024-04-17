@@ -16,6 +16,16 @@
 .wrapper button{
 	margin-top: 40px;
 }
+@media (max-height: 200px){
+	.text{
+		padding-top: 20px;
+	}
+}
+@media (max-height: 155px){
+	.text{
+		padding-top: 0px;
+	}
+}
 
 @media (max-width: 1500px){
 	.wrapper{
@@ -40,15 +50,5 @@
 		text-align: center;
 		padding-left: 10px;
 		padding-right: 10px;
-	}
-}
-@media (max-height: 200px){
-	.text{
-		padding-top: 20px;
-	}
-}
-@media (max-height: 155px){
-	.text{
-		padding-top: 0px;
 	}
 }
