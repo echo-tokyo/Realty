@@ -6,7 +6,7 @@ services:
     build:
       context: ./backend
       dockerfile: DockerfileBackend
-    container_name: friend_auto_backend
+    container_name: realty_backend
     restart: always
     env_file:
       - .env
@@ -18,7 +18,7 @@ services:
 
   certbot:
     image: certbot/certbot
-    container_name: friend_auto_certbot
+    container_name: realty_certbot
     env_file:
       - .env
     volumes:
@@ -36,10 +36,9 @@ services:
     build:
       context: .
       dockerfile: DockerfileNginx
-    container_name: friend_auto_nginx_front
+    container_name: realty_nginx_front
     restart: always
     volumes:
-      - mediafiles:/media:ro
       - certbot_www:/var/www/certbot/:ro
       - certbot_conf:/etc/nginx/ssl/:ro
     ports:
