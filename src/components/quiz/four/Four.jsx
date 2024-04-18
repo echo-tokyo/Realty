@@ -9,7 +9,12 @@ const Four = () => {
 	const get = useSelector((state) => state.quiz.renovatedOrNot)
 	const dispatch = useDispatch()
 
-	const isChecked = () => {
+	const isChecked = (e) => {
+		if(!e.target.parentElement.classList.contains('checked')){
+			setTimeout(() => {
+				nav('/fifth')
+			}, 300);
+		}
 		document.querySelectorAll('.r').forEach(element => {
 			if(element.checked){
 				element.parentElement.classList.add('checked')
@@ -51,13 +56,13 @@ const Four = () => {
 				<h1>Вопрос 4 из 6</h1>
 				<h3>Выберите подходящий вариант</h3>
 			</div>
-			<form action="" className='quiz_form' onClick={() => isChecked()}>
+			<form action="" className='quiz_form'>
 				<label className="inp inp1"  htmlFor="inp">
-					<input type="radio" id='inp' name='radio' className='r'/>
+					<input type="radio" id='inp' name='radio' className='r' onClick={(e) => isChecked(e)}/>
 					<h3>С ремонтом</h3>
 				</label>
 				<label className="inp inp2"  htmlFor="inp2">
-					<input type="radio" id='inp2' name='radio' className='r'/>
+					<input type="radio" id='inp2' name='radio' className='r' onClick={(e) => isChecked(e)}/>
 					<h3>Без ремонта</h3>
 				</label>
 			</form>
