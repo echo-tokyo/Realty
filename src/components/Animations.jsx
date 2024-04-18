@@ -22,7 +22,6 @@ const Animations = () => {
 	}, 100)
 
 	window.onload = () => {
-		console.log('обновилась стр')
 		nav('/')
 	}
 }

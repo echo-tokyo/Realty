@@ -35,8 +35,8 @@ const Three = () => {
 				<h1>Вопрос 3 из 6</h1>
 				<h3>Укажите ваш бюджет</h3>
 			</div>
-			<form action="" className='quiz_form three_quiz_form' onChange={() => isChange()}>
-				<input type="number" placeholder='От 3млн рублей' />
+			<form action="" className='quiz_form three_quiz_form' onChange={() => isChange()} onSubmit={(e) => e.preventDefault()}>
+				<input type="number" placeholder='От 3млн рублей'/>
 			</form>
 		</div>
 		<footer>
