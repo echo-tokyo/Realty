@@ -10,11 +10,14 @@ services:
     restart: always
     env_file:
       - .env
-    ports:
-      - "5555:5555"
-    networks:
-      proj_network:
-        ipv4_address: 172.16.1.2
+#    ports:
+#      - "5555:5555"
+#    networks:
+#      proj_network:
+#        ipv4_address: 172.16.1.2
+    expose:
+      - "5555"
+    network_mode: host
 
   certbot:
     image: certbot/certbot

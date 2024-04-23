@@ -12,7 +12,7 @@ def json_to_mail_text(json_data: dict) -> str:
 
     text = f"""Новая анкета о недвижимости.
 
-Квартира/дом: ----- {json_data["apartmentOrHouse"].capitalize()} \033[0m
+Квартира/дом: ----- {json_data["apartmentOrHouse"].capitalize()}
 Бюджет: ----- {str(json_data["budget"])}
 Районы: ----- {", ".join(json_data["districts"])}
 Новое здание / вторичка: ----- {json_data["newBuildingOrResale"].capitalize()}

@@ -6,7 +6,7 @@ from services import views
 
 app.add_url_rule("/api", methods=["POST"], view_func=views.main)
 CORS(app, resources={
-    "*": {
+    "/api": {
         "origins": "*"
     }
 })
