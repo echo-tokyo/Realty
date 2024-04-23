@@ -12,8 +12,9 @@ def send_mail(subject: str, text: str) -> bool:
 
     print('Sending start...')
     mail_body = mail_body.encode()  # для русских букв
+
+    server = smtplib.SMTP_SSL(host='smtp.gmail.com', port=465, timeout=5.0)
     try:
-        server = smtplib.SMTP_SSL('smtp.gmail.com')
         server.login(user=MAIL_FROM, password=MAIL_PASSWORD)
 
         server.sendmail(from_addr=MAIL_FROM, to_addrs=MAIL_TO_LIST, msg=mail_body)
