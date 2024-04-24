@@ -6,6 +6,7 @@
 }
 .quiz_form{
 	display: flex;
+	flex-direction: column;
 	flex-wrap: wrap;
 	margin-top: 50px;
 	gap: 10px;
@@ -73,17 +74,8 @@ footer{
 	height: 100%;
 	gap: 15px;
 }
-@media (max-height: 650px) {
-	.quiz_text{
-		padding-top: 50px;
-	}
-}
-@media (max-height: 530px) {
-	.quiz_text{
-		padding-top: 5px;
-	}
-}
-/* общее */
+
+/* по ширине */
 @media(max-width: 800px) {
 	.quiz_text{
 		padding-top: 5vh;
@@ -108,5 +100,14 @@ footer{
 	.fifth_quiz_form .inp, .sixth_form .inp{
 		width: 100%;
 		height: 40px;
+	}
+}
+/* по высоте */
+@media (max-height: 720px) {
+	.quiz_form{
+		margin-top: 20px;
+	}
+	.quiz_text{
+		padding-top: 10px;
 	}
 }
