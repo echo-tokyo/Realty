@@ -6,10 +6,12 @@
 }
 .quiz_form{
 	display: flex;
-	flex-direction: column;
 	flex-wrap: wrap;
 	margin-top: 50px;
 	gap: 10px;
+}
+.fifth_quiz_form{
+	flex-direction: column;
 }
 .other_city{
 	display: flex;
