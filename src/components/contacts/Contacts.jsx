@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux'
 import './contacts.css'
 import {useNavigate} from 'react-router-dom'
+import axios from 'axios'
 
 const Contacts = () => {
 	const nav = useNavigate()
@@ -65,12 +66,20 @@ const Contacts = () => {
 		// eslint-disable-next-line no-useless-escape
 		if(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(document.querySelector('.phone').value)) {
 			if(!Object.values(quizData).some(value => !value)){
-				console.log(transformData(quizData))
-				nav('/end')
+				axios.post('http://188.225.36.185/api', transformData(quizData))
+				.then(response => {
+					nav('/end')
+					console.log(response.data)
+				})
+				.catch(error => {
+					console.error('Ошибка при отправке запрсоа', error)
+					document.querySelector('.end').style.border = '2px solid red'
+				})
 			} else{
 				nav('/')
 			}
 			document.querySelector('.phone').style.border = null
+			document.querySelector('.end').style.border = null
 		}
 		else{
 			document.querySelector('.phone').style.border = '2px solid red'
@@ -85,7 +94,7 @@ const Contacts = () => {
 			</div>
 			<form action="">
 				<input type="number" className='phone' name='phone' placeholder='Номер телефона'/>
-				<button onClick={(e) => validateNumber(e)}>Завершить</button>
+				<button className='end' onClick={(e) => validateNumber(e)}>Завершить</button>
 				<h3 onClick={() => nav('/sixth')}>Вернуться назад</h3>
 			</form>
 		</div>
