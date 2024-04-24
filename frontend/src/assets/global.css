@@ -7,7 +7,7 @@ html, body{
 	background-color: #1C2323;
 	height: 100%;
 	user-select: none;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 .content{
 	padding-left: 160px;
@@ -41,6 +41,7 @@ button, input{
 	transition: all linear .15s;
     -webkit-transition: all linear .15s;
 	cursor: pointer;
+	border-radius: 0px;
 }
 button, .next{
 	border: none;
@@ -49,6 +50,8 @@ button, .next{
 	background-color: #81DBE1;
 	font-weight: 400;
 	letter-spacing: 2px;
+	color: black;
+	text-align: center;
 }
 .prev{
 	border: none;
