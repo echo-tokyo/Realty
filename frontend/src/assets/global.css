@@ -7,12 +7,12 @@ html, body{
 	background-color: #1C2323;
 	height: 100%;
 	user-select: none;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 .content{
 	padding-left: 160px;
 	padding-right: 160px;
-	min-height: calc(100vh - 130px);
+	min-height: calc(100svh - 130px);
 }
 body::-webkit-scrollbar {
 	width: 3px;
@@ -62,6 +62,7 @@ button, .next{
 	letter-spacing: 2px;
 	border: 1px solid white;
 	color: white;
+	text-align: center;
 }
 input[type='number']{
 	cursor:text;
