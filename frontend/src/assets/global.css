@@ -7,14 +7,14 @@ html, body{
 	background-color: #1C2323;
 	height: 100%;
 	user-select: none;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 .content{
 	padding-left: 160px;
 	padding-right: 160px;
 	min-height: calc(100svh - 130px);
 }
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
 	width: 3px;
 }
 body::-webkit-scrollbar-track {
@@ -23,7 +23,7 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
 	background-color: #ffffff;
 	border-radius: 20px;
-}
+} */
 
 /* Анимации */
 .element-animation {
@@ -51,6 +51,7 @@ button, .next{
 	font-weight: 400;
 	letter-spacing: 2px;
 	color: black;
+	padding: 0;
 	text-align: center;
 }
 .prev{
@@ -62,6 +63,7 @@ button, .next{
 	letter-spacing: 2px;
 	border: 1px solid white;
 	color: white;
+	padding: 0;
 	text-align: center;
 }
 input[type='number']{
