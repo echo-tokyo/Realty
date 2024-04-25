@@ -24,6 +24,8 @@ const Animations = () => {
 	window.onload = () => {
 		nav('/')
 	}
+
+	window.addEventListener('scroll', () => {window.scrollTo(0, 0)})
 }
 
 export default Animations
