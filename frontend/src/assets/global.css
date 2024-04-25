@@ -9,6 +9,7 @@ html, body{
 	user-select: none;
 	overflow: hidden;
 }
+::-webkit-scrollbar {display:none;}
 .content{
 	padding-left: 160px;
 	padding-right: 160px;
