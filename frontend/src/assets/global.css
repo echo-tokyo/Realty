@@ -146,3 +146,8 @@ input[type='number'], .prev, button, .next{
 		padding-right: 30px;
 	}
 }
+@media (max-height: 725px) and (max-width: 800px) {
+	.content{
+		min-height: calc(100svh - 100px);
+	}
+}
