@@ -10,6 +10,7 @@ const Contacts = () => {
 	const scrollToTop = (e) => {
 		window.scrollTo(0, 0)
 		e.preventDefault()
+		e.tabindex = -1
 		console.log(e.target)
 	}
 
