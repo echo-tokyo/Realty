@@ -11,7 +11,6 @@ const Contacts = () => {
 		window.scrollTo(0, 0)
 		e.preventDefault()
 		e.tabindex = -1
-		console.log(e.target)
 	}
 
 	function transformData(obj) {

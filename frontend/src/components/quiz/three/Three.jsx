@@ -9,6 +9,12 @@ const Three = () => {
 	const get = useSelector((state) => state.quiz.budget)
 	const dispatch = useDispatch()
 
+	const scrollToTop = (e) => {
+		window.scrollTo(0, 0)
+		e.preventDefault()
+		e.tabindex = -1
+	}
+
 	const isChange = () => {
 		dispatch(setThird(document.querySelector('input').value))
 	}
@@ -36,7 +42,7 @@ const Three = () => {
 				<h3>Укажите ваш бюджет</h3>
 			</div>
 			<form action="" className='quiz_form three_quiz_form' onChange={() => isChange()} onSubmit={(e) => e.preventDefault()}>
-				<input type="number" placeholder='От 3млн рублей'/>
+				<input type="number" placeholder='От 3млн рублей' onBlur={(e) => scrollToTop(e)}/>
 			</form>
 		</div>
 		<footer>
