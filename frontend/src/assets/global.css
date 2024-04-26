@@ -67,7 +67,6 @@ button, .next{
 	text-align: center;
 }
 input[type='number']{
-	cursor:text;
 	background-color: transparent;
 	font-weight: 200;
 	letter-spacing: 4px;
@@ -79,10 +78,13 @@ input[type='number']{
 	outline: none;
 	font-size: 16px;
 }
-input[type='number']:hover{
-	transition: 0.4s ease;
-	border: 1px solid #81DBE1;
+input[type='number']:focus{
+	transition: 0.4s ease;	
 	background-color: #161c1c;
+	cursor: text;
+}
+input[type='number']:hover{
+	border: 1px solid #81DBE1;
 }
 button:hover{
 	transition: 0.4s ease;

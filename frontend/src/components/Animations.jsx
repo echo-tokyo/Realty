@@ -20,6 +20,7 @@ const Animations = () => {
 			observer.observe(elm)
 		}
 	}, 100)
+	window.scrollTo(0,0)
 
 	window.onload = () => {
 		nav('/')

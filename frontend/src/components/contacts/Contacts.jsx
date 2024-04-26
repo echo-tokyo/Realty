@@ -7,9 +7,8 @@ const Contacts = () => {
 	const nav = useNavigate()
 	const quizData = useSelector((state) => state.quiz)
 
-	const scrollToTop = (e) => {
+	const scrollToTop = () => {
 		window.scrollTo(0, 0)
-		e.target.unselectable = 'on'
 	}
 
 	function transformData(obj) {

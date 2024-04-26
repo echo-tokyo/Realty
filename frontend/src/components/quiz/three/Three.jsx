@@ -9,9 +9,8 @@ const Three = () => {
 	const get = useSelector((state) => state.quiz.budget)
 	const dispatch = useDispatch()
 
-	const scrollToTop = (e) => {
+	const scrollToTop = () => {
 		window.scrollTo(0, 0)
-		e.target.unselectable = 'on'
 	}
 
 	const isChange = () => {
