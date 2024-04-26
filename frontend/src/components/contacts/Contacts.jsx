@@ -8,7 +8,6 @@ const Contacts = () => {
 	const quizData = useSelector((state) => state.quiz)
 
 	const scrollToTop = () => {
-		document.body.style.backgroundColor = 'black'
 		window.scrollTo(0, 0)
 	}
 
