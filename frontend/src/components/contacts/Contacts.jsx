@@ -7,8 +7,10 @@ const Contacts = () => {
 	const nav = useNavigate()
 	const quizData = useSelector((state) => state.quiz)
 
-	const scrollToTop = () => {
+	const scrollToTop = (e) => {
 		window.scrollTo(0, 0)
+		e.preventDefault()
+		console.log(e.target)
 	}
 
 	function transformData(obj) {
@@ -97,7 +99,7 @@ const Contacts = () => {
 				<h3>Оставьте ваши контактные данные и мы вам перезвоним</h3>
 			</div>
 			<form action="">
-				<input type="number" className='phone' name='phone' placeholder='Номер телефона' onBlur={() => scrollToTop()}/>
+				<input type="number" className='phone' name='phone' placeholder='Номер телефона' onBlur={(e) => scrollToTop(e)}/>
 				<button className='end' onClick={(e) => validateNumber(e)}>Завершить</button>
 				<h3 onClick={() => nav('/sixth')}>Вернуться назад</h3>
 			</form>
