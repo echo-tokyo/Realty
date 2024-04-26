@@ -7,9 +7,8 @@ html, body{
 	background-color: #1C2323;
 	height: 100%;
 	user-select: none;
-	overflow: hidden !important;
+	overflow: hidden;
 }
-::-webkit-scrollbar {display:none;}
 .content{
 	padding-left: 160px;
 	padding-right: 160px;

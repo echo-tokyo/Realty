@@ -7,6 +7,10 @@ const Contacts = () => {
 	const nav = useNavigate()
 	const quizData = useSelector((state) => state.quiz)
 
+	document.querySelector('.phone').addEventListener('blur', () => {
+		window.scrollTo(0, 0)
+	})
+
 	function transformData(obj) {
 		const newObj = {};
 		newObj.apartmentOrHouse = obj.apartmentOrHouse === 'inp' ? 'квартира' : 'дом';
