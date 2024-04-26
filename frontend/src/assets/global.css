@@ -7,7 +7,7 @@ html, body{
 	background-color: #1C2323;
 	height: 100%;
 	user-select: none;
-	overflow: hidden;
+	/* overflow: hidden; */
 }
 .content{
 	padding-left: 160px;
