@@ -11,8 +11,7 @@ const Three = () => {
 
 	const scrollToTop = (e) => {
 		window.scrollTo(0, 0)
-		e.preventDefault()
-		e.tabindex = -1
+		e.target.unselectable = 'on'
 	}
 
 	const isChange = () => {
