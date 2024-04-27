@@ -13,7 +13,6 @@ const Contacts = () => {
 
 	function transformData(obj) {
 		const newObj = {};
-		console.log(obj)
 		newObj.apartmentOrHouse = obj.apartmentOrHouse === 'inp' ? 'квартира' : 'дом';
 		newObj.newBuildingOrResale = obj.newBuildingOrResale === 'inp' ? 'новостройка' : 'вторичка';
 		newObj.budget = parseInt(obj.budget)
@@ -101,6 +100,7 @@ const Contacts = () => {
 		else{
 			document.querySelector('.phone').style.border = '2px solid red'
 		}
+		console.log(transformData(quizData))
 	}
 	
 	return (
