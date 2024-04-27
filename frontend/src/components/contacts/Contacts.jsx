@@ -13,12 +13,31 @@ const Contacts = () => {
 
 	function transformData(obj) {
 		const newObj = {};
+		console.log(obj)
 		newObj.apartmentOrHouse = obj.apartmentOrHouse === 'inp' ? 'квартира' : 'дом';
 		newObj.newBuildingOrResale = obj.newBuildingOrResale === 'inp' ? 'новостройка' : 'вторичка';
 		newObj.budget = parseInt(obj.budget)
 		newObj.renovatedOrNot = obj.renovatedOrNot === 'inp' ? 'с ремонтом' : 'без ремонта';
 		newObj.phone = parseInt(document.querySelector('.phone').value)
-		
+		if (obj.rooms === 'inp') {
+			newObj['rooms'] = 'гостинница';
+		} else if (obj.rooms === 'inp2') {
+			newObj['rooms'] = 'студия'
+		} else if (obj.rooms === 'inp3') {
+			newObj['rooms'] = '1-комнатная'
+		} else if (obj.rooms === 'inp4') {
+			newObj['rooms'] = 'евро 2-комнатная'
+		} else if (obj.rooms === 'inp5') {
+			newObj['rooms'] = '2-комнатная'
+		} else if (obj.rooms === 'inp6') {
+			newObj['rooms'] = 'евро 3-комнатная'
+		} else if (obj.rooms === 'inp7') {
+			newObj['rooms'] = '3-комнатная'
+		} else if (obj.rooms === 'inp8') {
+			newObj['rooms'] = '4-комнатная'
+		} else{
+			newObj['rooms'] = false
+		}
 		newObj.districts = obj.districts.map(item => {
 			switch (item) {
 				case 'inp':
@@ -61,27 +80,26 @@ const Contacts = () => {
 					return item;
 			}
 		})
-
 		return newObj;
 	}
-	
 	const validateNumber = (e) => {
 		e.preventDefault()
 		// eslint-disable-next-line no-useless-escape
 		if(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(document.querySelector('.phone').value)) {
-			if(!Object.values(quizData).some(value => !value)){
-				axios.post('http://188.225.36.185/api', transformData(quizData))
-				.then(response => {
-					nav('/end')
-					console.log(response.data)
-				})
-				.catch(error => {
-					console.error('Ошибка при отправке запрсоа', error)
-					document.querySelector('.end').style.border = '2px solid red'
-				})
-			} else{
-				nav('/')
-			}
+			// if(!Object.values(quizData).some(value => !value)){
+				console.log(transformData(quizData))
+				// axios.post('http://188.225.36.185/api', transformData(quizData))
+				// .then(response => {
+				// 	nav('/end')
+				// 	console.log(response.data)
+				// })
+				// .catch(error => {
+				// 	console.error('Ошибка при отправке запрсоа', error)
+				// 	document.querySelector('.end').style.border = '2px solid red'
+				// })
+				// } else{
+			// 	nav('/')
+			// }
 			document.querySelector('.phone').style.border = null
 			document.querySelector('.end').style.border = null
 		}
@@ -99,7 +117,7 @@ const Contacts = () => {
 			<form action="">
 				<input type="number" className='phone' name='phone' placeholder='Номер телефона' onBlur={(e) => scrollToTop(e)}/>
 				<button className='end' onClick={(e) => validateNumber(e)}>Завершить</button>
-				<h3 onClick={() => nav('/sixth')}>Вернуться назад</h3>
+				<h3 onClick={() => nav('/payment')}>Вернуться назад</h3>
 			</form>
 		</div>
 	)

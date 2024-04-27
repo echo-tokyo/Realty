@@ -2,12 +2,13 @@ import { useEffect } from 'react'
 import '../quiz.css'
 import {useNavigate} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
-import { setSixth } from '../../../store/quiz/quiz.slice'
+import { setPayment } from '../../../store/quiz/quiz.slice'
 
-const Six = () => {
+const Payment = () => {
 	const nav = useNavigate()
 	const dispatch = useDispatch()
 	const get = useSelector((state) => state.quiz.payment)
+	const isRoomsSelected = useSelector((state) => state.quiz.rooms)
 	
 	const isChecked = (e) => {
 		const arr = []
@@ -32,7 +33,7 @@ const Six = () => {
 			alert('Можно выбрать только три варианта');
 			return false;
 		}
-		dispatch(setSixth(arr))
+		dispatch(setPayment(arr))
 	}	  
 
 	useEffect(() => {
@@ -62,7 +63,7 @@ const Six = () => {
 		<>
 		<div className="content element-animation">
 			<div className="quiz_text sixth_quiz_text">
-				<h1>Вопрос 6 из 6</h1>
+				<h1>Вопрос {isRoomsSelected === false ? '6' : '7'}</h1>
 				<h3>Выберите до трёх способов рассчета</h3>
 			</div>
 			<form action="" className='quiz_form sixth_form'>
@@ -94,7 +95,7 @@ const Six = () => {
 		</div>
 		<footer>
 			<div className="footer_items">
-				<button className='prev' onClick={() => nav('/fifth')}>Назад</button>
+				<button className='prev' onClick={() => nav('/districts')}>Назад</button>
 				<button className='next' onClick={() => next()}>Вперед</button>
 			</div>
 		</footer>
@@ -102,4 +103,4 @@ const Six = () => {
 	)
 }
 
-export default Six
+export default Payment

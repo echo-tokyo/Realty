@@ -4,6 +4,7 @@ const quizSlice = createSlice({
 	name: 'quiz',
 	initialState: {
 		apartmentOrHouse: false,
+		rooms: false,
 		newBuildingOrResale: false,
 		budget: false, 
 		renovatedOrNot: false,
@@ -11,26 +12,29 @@ const quizSlice = createSlice({
 		payment: false,
 	},
 	reducers: {
-		setFirst: (state, action) => {
+		setApartmentOrHouse: (state, action) => {
 			state.apartmentOrHouse = action.payload
 		},
-		setSecond: (state, action) => {
+		setRooms: (state, action) => {
+			state.rooms = action.payload
+		},
+		setNewBuildingOrResale: (state, action) => {
 			state.newBuildingOrResale = action.payload
 		},
-		setThird: (state, action) => {
+		setBudget: (state, action) => {
 			state.budget = action.payload
 		},
-		setFourth: (state, action) => {
+		setRenovatedOrNot: (state, action) => {
 			state.renovatedOrNot = action.payload
 		},
-		setFifth: (state, action) => {
+		setDistricts: (state, action) => {
 			state.districts = action.payload
 		},
-		setSixth: (state, action) => {
+		setPayment: (state, action) => {
 			state.payment = action.payload
 		},
 	}
 })
 
-export const {setFirst, setSecond, setThird, setFourth, setFifth, setSixth} = quizSlice.actions
+export const {setApartmentOrHouse, setBudget, setDistricts, setNewBuildingOrResale, setPayment, setRenovatedOrNot, setRooms} = quizSlice.actions
 export default quizSlice.reducer

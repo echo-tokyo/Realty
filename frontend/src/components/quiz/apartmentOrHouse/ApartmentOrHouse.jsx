@@ -2,24 +2,29 @@ import { useEffect } from 'react'
 import '../quiz.css'
 import {useNavigate} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
-import {setSecond} from '../../../store/quiz/quiz.slice'
+import {setApartmentOrHouse, setRooms} from '../../../store/quiz/quiz.slice'
 
-
-const Two = () => {
+const ApartmentOrHouse = () => {
 	const nav = useNavigate()
-	const get = useSelector((state) => state.quiz.newBuildingOrResale)
+	const get = useSelector((state) => state.quiz.apartmentOrHouse)
 	const dispatch = useDispatch()
 
 	const isChecked = (e) => {
-		if(!e.target.parentElement.classList.contains('checked')){
+		if(!e.target.parentElement.classList.contains('checked') && e.target.parentElement.classList.contains('inp1')){
 			setTimeout(() => {
-				nav('/third')
-			}, 300);
+				nav('/rooms')
+			}, 300)
+		}
+		else if (!e.target.parentElement.classList.contains('checked') && e.target.parentElement.classList.contains('inp2')) {
+			setTimeout(() => {
+				nav('/new-building-or-resale')
+				dispatch(setRooms(false))
+			}, 300)
 		}
 		document.querySelectorAll('.r').forEach(element => {
 			if(element.checked){
 				element.parentElement.classList.add('checked')
-				dispatch(setSecond(element.id))
+				dispatch(setApartmentOrHouse(element.id))
 			}
 			else{
 				element.parentElement.classList.remove('checked')
@@ -39,11 +44,19 @@ const Two = () => {
 	const next = () => {
 		let isChecked = false;
 		for (let i = 0; i < document.querySelectorAll('.r').length; i++) { 
-			if (document.querySelectorAll('.r')[i].checked) { 
-				isChecked = true;
-				nav('/third');
-				break
-			} 
+			if (document.querySelectorAll('.r')[i].checked) {
+				if(document.querySelectorAll('.r')[i].id === 'inp') {
+					isChecked = true;
+					nav('/rooms')
+					break
+				}
+				else {
+					isChecked = true;
+					nav('/new-building-or-resale')
+					dispatch(setRooms(false))
+					break
+				}
+			}
 		}
 		if (!isChecked) { 
 			alert('Выберите хотя бы один вариант'); 
@@ -54,23 +67,23 @@ const Two = () => {
 		<>
 		<div className="content element-animation">
 			<div className="quiz_text">
-				<h1>Вопрос 2 из 6</h1>
+				<h1>Вопрос 1</h1>
 				<h3>Выберите подходящий вариант</h3>
 			</div>
 			<form action="" className='quiz_form'>
 				<label className="inp inp1"  htmlFor="inp">
 					<input type="radio" id='inp' name='radio' className='r' onClick={(e) => isChecked(e)}/>
-					<h3>Новостройка</h3>
+					<h3>Квартира</h3>
 				</label>
 				<label className="inp inp2"  htmlFor="inp2">
 					<input type="radio" id='inp2' name='radio' className='r' onClick={(e) => isChecked(e)}/>
-					<h3>Вторичка</h3>
+					<h3>Дом</h3>
 				</label>
 			</form>
 		</div>
 		<footer>
 			<div className="footer_items">
-				<button className='prev' onClick={() => nav('/first')}>Назад</button>
+				<button className='prev' onClick={() => nav('/')}>Назад</button>
 				<button className='next' onClick={() => next()}>Вперед</button>
 			</div>
 		</footer>
@@ -78,4 +91,4 @@ const Two = () => {
 	)
 }
 
-export default Two
+export default ApartmentOrHouse

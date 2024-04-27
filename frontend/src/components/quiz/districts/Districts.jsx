@@ -1,13 +1,14 @@
-import { setFifth } from '../../../store/quiz/quiz.slice'
+import { setDistricts } from '../../../store/quiz/quiz.slice'
 import '../quiz.css'
 import {useNavigate} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import { useEffect } from 'react'
 
-const Five = () => {
+const Districts = () => {
 	const nav = useNavigate()
 	const dispatch = useDispatch()
 	const get = useSelector((state) => state.quiz.districts)
+	const isRoomsSelected = useSelector((state) => state.quiz.rooms)
 
 	const isChecked = (e) => {
 		if(!e.target.classList.contains('o')){
@@ -29,7 +30,7 @@ const Five = () => {
 				element.style.backgroundColor = null
 			}
 		})
-		dispatch(setFifth(checkedValues))
+		dispatch(setDistricts(checkedValues))
 	}
 
 	const uncheckAll = () => {
@@ -57,7 +58,7 @@ const Five = () => {
 		for (let i = 0; i < document.querySelectorAll('.c').length; i++) { 
 			if (document.querySelectorAll('.c')[i].checked) { 
 				isChecked = true;
-				nav('/sixth');
+				nav('/payment');
 				break
 			} 
 		}
@@ -70,7 +71,7 @@ const Five = () => {
 		<>
 		<div className="content element-animation">
 			<div className="quiz_text fifth_quiz_text">
-				<h1>Вопрос 5 из 6</h1>
+				<h1>Вопрос {isRoomsSelected === false ? '5' : '6'}</h1>
 				<h3>Укажите желаемые районы в Ростове-на-Дону</h3>
 			</div>
 			<form action="" className='quiz_form fifth_quiz_form'>
@@ -119,7 +120,7 @@ const Five = () => {
 		</div>
 		<footer>
 			<div className="footer_items">
-				<button className='prev' onClick={() => nav('/fourth')}>Назад</button>
+				<button className='prev' onClick={() => nav('/renovated-or-not')}>Назад</button>
 				<button className='next' onClick={() => next()}>Вперед</button>
 			</div>
 		</footer>
@@ -127,4 +128,4 @@ const Five = () => {
 	)
 }
 
-export default Five
+export default Districts

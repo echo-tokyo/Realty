@@ -2,11 +2,12 @@ import '../quiz.css'
 import {useNavigate} from 'react-router-dom'
 import { useEffect } from 'react'
 import {useSelector, useDispatch} from 'react-redux'
-import { setThird } from '../../../store/quiz/quiz.slice'
+import { setBudget } from '../../../store/quiz/quiz.slice'
 
-const Three = () => {
+const Budget = () => {
 	const nav = useNavigate()
 	const get = useSelector((state) => state.quiz.budget)
+	const isRoomsSelected = useSelector((state) => state.quiz.rooms)
 	const dispatch = useDispatch()
 
 	const scrollToTop = () => {
@@ -14,7 +15,7 @@ const Three = () => {
 	}
 
 	const isChange = () => {
-		dispatch(setThird(document.querySelector('input').value))
+		dispatch(setBudget(document.querySelector('input').value))
 	}
 
 	useEffect(() => {
@@ -25,7 +26,7 @@ const Three = () => {
 
 	const next = () => {
 		if (document.querySelector('input').value >= 3000000){
-			nav('/fourth')
+			nav('/renovated-or-not')
 		}
 		else{
 			alert('Укажите число от трёх миллионов рублей')
@@ -36,7 +37,7 @@ const Three = () => {
 		<>
 		<div className="content element-animation">
 			<div className="quiz_text">
-				<h1>Вопрос 3 из 6</h1>
+				<h1>Вопрос {isRoomsSelected === false ? '3' : '4'}</h1>
 				<h3>Укажите ваш бюджет</h3>
 			</div>
 			<form action="" className='quiz_form three_quiz_form' onChange={() => isChange()} onSubmit={(e) => e.preventDefault()}>
@@ -45,7 +46,7 @@ const Three = () => {
 		</div>
 		<footer>
 			<div className="footer_items">
-				<button className='prev' onClick={() => nav('/second')}>Назад</button>
+				<button className='prev' onClick={() => nav('/new-building-or-resale')}>Назад</button>
 				<button className='next' onClick={() => next()}>Вперед</button>
 			</div>
 		</footer>
@@ -53,4 +54,4 @@ const Three = () => {
 	)
 }
 
-export default Three
+export default Budget
