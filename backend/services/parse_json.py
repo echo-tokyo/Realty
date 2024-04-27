@@ -19,7 +19,7 @@ def json_to_mail_text(json_data: dict) -> str:
 Способы расчёта: ----- {", ".join(json_data["payment"])}
 Ремонт: ----- {json_data["renovatedOrNot"].capitalize()}
 
-Номер телефона: {"{0}({1}{2}{3}){4}{5}{6}-{7}{8}-{9}{10}".format(*list(str(json_data["phone"])))}
+Номер телефона: {"{0}{1}{2}{3}-{4}{5}{6}-{7}{8}-{9}{10}".format(*list(str(json_data["phone"])))}
 
 
 Дата и время прохождения опроса: {datetime.strftime(datetime.now(), "%d.%m.%Y, %H:%M:%S")}. 
