@@ -86,20 +86,15 @@ const Contacts = () => {
 		e.preventDefault()
 		// eslint-disable-next-line no-useless-escape
 		if(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(document.querySelector('.phone').value)) {
-			// if(!Object.values(quizData).some(value => !value)){
-				console.log(transformData(quizData))
-				// axios.post('http://188.225.36.185/api', transformData(quizData))
-				// .then(response => {
-				// 	nav('/end')
-				// 	console.log(response.data)
-				// })
-				// .catch(error => {
-				// 	console.error('Ошибка при отправке запрсоа', error)
-				// 	document.querySelector('.end').style.border = '2px solid red'
-				// })
-				// } else{
-			// 	nav('/')
-			// }
+			axios.post('http://188.225.36.185/api', transformData(quizData))
+			.then(response => {
+				nav('/end')
+				console.log(response.data)
+			})
+			.catch(error => {
+				console.error('Ошибка при отправке запрсоа', error)
+				document.querySelector('.end').style.border = '2px solid red'
+			})
 			document.querySelector('.phone').style.border = null
 			document.querySelector('.end').style.border = null
 		}
