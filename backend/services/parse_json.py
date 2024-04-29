@@ -4,16 +4,21 @@ from settings.constants import logger
 
 
 def json_to_mail_text(json_data: dict) -> str:
-    needed_json_keys = ["apartmentOrHouse", "budget", "districts", "newBuildingOrResale", "payment", "phone", "renovatedOrNot"]
+    needed_json_keys = {"apartmentOrHouse", "budget", "districts", "newBuildingOrResale", "payment", "phone", "renovatedOrNot", "rooms"}
 
-    if sorted(list(json_data)) != needed_json_keys:
+    if not set(list(json_data)).issubset(needed_json_keys):
         logger.critical(f'Handle json error: "Required JSON keys are not equal to received JSON keys!"')
         return "ERROR"
+
+    # костыль для непостоянного поля с типом квартиры
+    rooms = ""
+    if rooms_value := json_data.get("rooms", False):
+        rooms = f"Тип квартиры: ----- {rooms_value}\n"
 
     text = f"""Новая анкета о недвижимости.
 
 Квартира/дом: ----- {json_data["apartmentOrHouse"].capitalize()}
-Бюджет: ----- {str(json_data["budget"])}
+{rooms}Бюджет: ----- {str(json_data["budget"])}
 Районы: ----- {", ".join(json_data["districts"])}
 Новое здание / вторичка: ----- {json_data["newBuildingOrResale"].capitalize()}
 Способы расчёта: ----- {", ".join(json_data["payment"])}

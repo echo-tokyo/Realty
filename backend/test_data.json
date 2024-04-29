@@ -5,5 +5,6 @@
   "newBuildingOrResale": "вторичка",
   "payment": ["Ипотека", "Сельский сертификат"],
   "phone": 88005553535,
-  "renovatedOrNot": "без ремонта"
+  "renovatedOrNot": "без ремонта",
+  "rooms": "1-комнатная"
 }
