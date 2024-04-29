@@ -12,8 +12,8 @@ def json_to_mail_text(json_data: dict) -> str:
 
     # костыль для непостоянного поля с типом квартиры
     rooms = ""
-    if rooms_value := json_data.get("rooms", False):
-        rooms = f"Тип квартиры: ----- {rooms_value}\n"
+    if rooms_value := json_data.get("rooms", ""):
+        rooms = f"Тип квартиры: ----- {rooms_value.capitalize()}\n"
 
     text = f"""Новая анкета о недвижимости.
 
