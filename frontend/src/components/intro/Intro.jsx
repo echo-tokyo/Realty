@@ -6,12 +6,15 @@ const Intro = () => {
 	const nav = useNavigate()
 	useEffect(() => {
 		const mask = document.querySelector('.mask')
-		window.addEventListener('load', () => {
-			mask.style.opacity = '0'
-			setTimeout(() => {
-				mask.style.display = 'none'
-			}, 500);
-		})
+		setTimeout(() => {
+			mask.style.display = 'none'
+		}, 500);
+		// window.addEventListener('load', () => {
+		// 	mask.style.opacity = '0'
+		// 	setTimeout(() => {
+		// 		mask.style.display = 'none'
+		// 	}, 500);
+		// })
 
 		const slides = ['../../../public/bg1.png', '../../../public/bg2.png', '../../../public/bg3.png']
 		let url = 0;
