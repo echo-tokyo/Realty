@@ -13,7 +13,11 @@ const Intro = () => {
 			mask.style.display = 'none'
 		});
 
-		const slides = ['../../../public/bg1.webp', '../../../public/bg2.webp', '../../../public/bg3.webp']
+		const slides = [
+			'../../../public/bg1.webp',
+			'../../../public/bg2.webp',
+			'../../../public/bg3.webp',
+		]
 		let url = 0;
 		const interval = setInterval(() => { 
 			url += 1 
