@@ -1,6 +1,7 @@
 .wrapper{
 	height: 100svh;
-	background-image: url('../../../public/bg.png');
+	transition: 1.5s;
+	background-image: url('../../../public/bg1.png');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
