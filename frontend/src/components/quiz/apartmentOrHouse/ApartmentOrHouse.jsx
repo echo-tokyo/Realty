@@ -83,7 +83,10 @@ const ApartmentOrHouse = () => {
 		</div>
 		<footer>
 			<div className="footer_items">
-				<button className='prev' onClick={() => nav('/')}>Назад</button>
+				<button className='prev' onClick={() => {
+					nav('/')
+					location.reload()
+				}}>Назад</button>
 				<button className='next' onClick={() => next()}>Вперед</button>
 			</div>
 		</footer>

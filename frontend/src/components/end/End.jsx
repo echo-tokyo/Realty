@@ -20,6 +20,7 @@ const End = () => {
 					dispatch(setDistricts(false))
 					dispatch(setPayment(false))
 					nav('/')
+					location.reload()
 				}}>Вернуться назад</button>
 			</div>
 		</div>

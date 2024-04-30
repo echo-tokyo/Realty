@@ -4,18 +4,14 @@ import {useNavigate} from 'react-router-dom'
 
 const Intro = () => {
 	const nav = useNavigate()
-
 	useEffect(() => {
-		if(!localStorage.getItem('preloader')){
-			const mask = document.querySelector('.mask')
-			window.addEventListener('load', () => {
-				mask.style.opacity = '0'
-				setTimeout(() => {
-					mask.style.display = 'none'
-				}, 500);
-				localStorage.setItem('preloader', true)
-			})
-		}
+		const mask = document.querySelector('.mask')
+		window.addEventListener('load', () => {
+			mask.style.opacity = '0'
+			setTimeout(() => {
+				mask.style.display = 'none'
+			}, 500);
+		})
 
 		const slides = ['../../../public/bg1.png', '../../../public/bg2.png', '../../../public/bg3.png']
 		let url = 0;
@@ -36,11 +32,9 @@ const Intro = () => {
 
 	return (
 		<>
-		{!localStorage.getItem('preloader') && (
-			<div className="mask">
-				<div className="loader"></div>
-			</div>
-		)}
+		<div className="mask">
+			<div className="loader"></div>
+		</div>
 		<div className="wrapper">
 			<div className="text">
 				<h1>Найдите свою идеальную квартиру с <br /> помощью умного квиза!</h1>
