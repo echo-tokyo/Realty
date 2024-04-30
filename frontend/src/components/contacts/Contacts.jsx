@@ -91,16 +91,17 @@ const Contacts = () => {
 				console.log(response.data)
 			})
 			.catch(error => {
+				alert('Произошла ошибка при отправке данных')
 				console.error('Ошибка при отправке запрсоа', error)
 				document.querySelector('.end').style.border = '2px solid red'
 			})
 			document.querySelector('.phone').style.border = null
 			document.querySelector('.end').style.border = null
-		}
+		} 
 		else{
+			alert('Неправильно указан номер телефона')
 			document.querySelector('.phone').style.border = '2px solid red'
 		}
-		console.log(transformData(quizData))
 	}
 	
 	return (

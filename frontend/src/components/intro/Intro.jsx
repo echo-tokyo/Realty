@@ -20,9 +20,7 @@ const Intro = () => {
 			if(url == slides.length) { 
 				url = 0 
 			}  
-			if(location.pathname === '/'){ 
-				document.querySelector('.wrapper').style.backgroundImage = 'url('+slides[url]+')' 
-			} 
+			document.querySelector('.wrapper').style.backgroundImage = 'url('+slides[url]+')' 
 		}, 3000);
 
 		return () => {

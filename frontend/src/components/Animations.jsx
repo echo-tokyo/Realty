@@ -23,7 +23,13 @@ const Animations = () => {
 	window.scrollTo(0,0)
 
 	window.onload = () => {
-		nav('/')
+		if(location.pathname !== '/'){
+			alert('Данные были сброшены')
+			nav('/')
+			setTimeout(() => {
+				location.reload()
+			}, 100)
+		}
 	}
 }
 
