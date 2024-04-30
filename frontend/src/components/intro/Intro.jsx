@@ -7,6 +7,7 @@ const Intro = () => {
 	useEffect(() => {
 		const mask = document.querySelector('.mask')
 		setTimeout(() => {
+			mask.style.opacity = '0'
 			mask.style.display = 'none'
 		}, 500);
 		// window.addEventListener('load', () => {
