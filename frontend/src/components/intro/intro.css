@@ -1,6 +1,6 @@
 .wrapper{
 	height: 100svh;
-	transition: 1.5s;
+	/* transition: 1.5s; */
 	background-image: url('../../../public/bg1.png');
 	background-position: center;
 	background-repeat: no-repeat;

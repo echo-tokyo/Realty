@@ -1,18 +1,22 @@
+import { useEffect } from 'react'
 import './intro.css'
 import {useNavigate} from 'react-router-dom'
 
 const Intro = () => {
 	const nav = useNavigate()
-	const slides = ['../../../public/bg1.png', '../../../public/bg2.png', '../../../public/bg3.png']
-	let url = 0
-	setInterval(() => {
-		url += 1
-		if(url == slides.length) {
-				url = 0
-		} 
-		
-		document.querySelector('.wrapper').style.backgroundImage = 'url(' + slides[url] + ')'
-	}, 3000);
+	useEffect(() => {
+		const slides = ['../../../public/bg2.png', '../../../public/bg3.png']
+		let url = 0
+		setInterval(() => {
+			url += 1
+			if(url == slides.length) {
+					url = 0
+			} 
+			
+			document.querySelector('.wrapper').style.transition = '1.5s'
+			document.querySelector('.wrapper').style.backgroundImage = 'url(' + slides[url] + ')'
+		}, 3000);
+	})
 	return (
 		<div className="wrapper">
 			<div className="text">
