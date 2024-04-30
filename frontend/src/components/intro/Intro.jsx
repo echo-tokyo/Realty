@@ -5,7 +5,7 @@ import {useNavigate} from 'react-router-dom'
 const Intro = () => {
 	const nav = useNavigate()
 	useEffect(() => {
-		const slides = ['../../../public/bg2.png', '../../../public/bg3.png']
+		const slides = ['../../../public/bg1.png', '../../../public/bg2.png', '../../../public/bg3.png']
 		let url = 0;
 		const interval = setInterval(() => { 
 			url += 1 
