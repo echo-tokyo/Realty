@@ -8,14 +8,10 @@ const Intro = () => {
 		const mask = document.querySelector('.mask')
 		setTimeout(() => {
 			mask.style.opacity = '0'
+		}, 300);
+		mask.addEventListener('transitionend', () => {
 			mask.style.display = 'none'
-		}, 500);
-		// window.addEventListener('load', () => {
-		// 	mask.style.opacity = '0'
-		// 	setTimeout(() => {
-		// 		mask.style.display = 'none'
-		// 	}, 500);
-		// })
+		});
 
 		const slides = ['../../../public/bg1.webp', '../../../public/bg2.webp', '../../../public/bg3.webp']
 		let url = 0;
