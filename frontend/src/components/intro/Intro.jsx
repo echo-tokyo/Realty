@@ -16,7 +16,7 @@ const Intro = () => {
 		// 	}, 500);
 		// })
 
-		const slides = ['../../../public/bg1.png', '../../../public/bg2.png', '../../../public/bg3.png']
+		const slides = ['../../../public/bg1.webp', '../../../public/bg2.webp', '../../../public/bg3.webp']
 		let url = 0;
 		const interval = setInterval(() => { 
 			url += 1 
@@ -24,7 +24,7 @@ const Intro = () => {
 				url = 0 
 			}  
 			document.querySelector('.wrapper').style.backgroundImage = 'url('+slides[url]+')' 
-		}, 3000);
+		}, 5000);
 
 		return () => {
 			clearInterval(interval);
