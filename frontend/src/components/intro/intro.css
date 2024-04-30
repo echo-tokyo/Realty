@@ -17,6 +17,32 @@
 .wrapper button{
 	margin-top: 40px;
 }
+.mask{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background: #1C2323;
+	top: 0;
+	z-index: 100;
+	transition: 0.5s;
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+}
+.loader{
+	width: 75px;
+	height: 75px;
+	border: 6px solid #00eeff;
+	border-left-color: 	#205a5f;
+	border-radius: 50%;
+	/* border-left-color: var(--black); */
+	animation: loader 1.3s linear infinite;
+}
+@keyframes loader {
+	100% {
+		transform: rotate(360deg);
+	}
+}
 @media (max-height: 200px){
 	.text{
 		padding-top: 20px;

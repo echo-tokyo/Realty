@@ -4,7 +4,19 @@ import {useNavigate} from 'react-router-dom'
 
 const Intro = () => {
 	const nav = useNavigate()
+
 	useEffect(() => {
+		if(!localStorage.getItem('preloader')){
+			const mask = document.querySelector('.mask')
+			window.addEventListener('load', () => {
+				mask.style.opacity = '0'
+				setTimeout(() => {
+					mask.style.display = 'none'
+				}, 500);
+				localStorage.setItem('preloader', true)
+			})
+		}
+
 		const slides = ['../../../public/bg1.png', '../../../public/bg2.png', '../../../public/bg3.png']
 		let url = 0;
 		const interval = setInterval(() => { 
@@ -21,7 +33,14 @@ const Intro = () => {
 			clearInterval(interval);
 		}
 	}, [location.pathname])
+
 	return (
+		<>
+		{!localStorage.getItem('preloader') && (
+			<div className="mask">
+				<div className="loader"></div>
+			</div>
+		)}
 		<div className="wrapper">
 			<div className="text">
 				<h1>Найдите свою идеальную квартиру с <br /> помощью умного квиза!</h1>
@@ -29,6 +48,7 @@ const Intro = () => {
 			</div>
 			<button onClick={() => nav('/apartment-or-house')}>Найти</button>
 		</div>
+		</>
 	)
 }
 
