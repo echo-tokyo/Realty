@@ -14,9 +14,9 @@ const Intro = () => {
 		});
 
 		const slides = [
-			'../../../public/bg1.webp',
-			'../../../public/bg2.webp',
-			'../../../public/bg3.webp',
+			'../../../public/bg1.png',
+			'../../../public/bg2.png',
+			'../../../public/bg3.png',
 		]
 		let url = 0;
 		const interval = setInterval(() => { 
