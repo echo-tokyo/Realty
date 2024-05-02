@@ -4,6 +4,8 @@ import {useNavigate} from 'react-router-dom'
 
 const Intro = () => {
 	const nav = useNavigate()
+	window.scrollTo(0, 0)
+
 	useEffect(() => {
 		const mask = document.querySelector('.mask')
 		setTimeout(() => {
@@ -14,9 +16,9 @@ const Intro = () => {
 		});
 
 		const slides = [
-			'../../../public/bg1.png',
-			'../../../public/bg2.png',
-			'../../../public/bg3.png',
+			'../../../public/bg1.webp',
+			'../../../public/bg2.webp',
+			'../../../public/bg3.webp',
 		]
 		let url = 0;
 		const interval = setInterval(() => { 
