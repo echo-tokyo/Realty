@@ -5,16 +5,14 @@ import {useNavigate} from 'react-router-dom'
 const Intro = () => {
 	const nav = useNavigate()
 	window.scrollTo(0, 0)
-
+	
 	useEffect(() => {
 		const mask = document.querySelector('.mask')
-		window.addEventListener('load', () => {
-			setTimeout(() => {
-				mask.style.opacity = '0'
-			}, 300);
-			mask.addEventListener('transitionend', () => {
-				mask.style.display = 'none'
-			})
+		setTimeout(() => {
+			mask.style.opacity = '0'
+		}, 500);
+		mask.addEventListener('transitionend', () => {
+			mask.style.display = 'none'
 		})
 
 		const slides = [
