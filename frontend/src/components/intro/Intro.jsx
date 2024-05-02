@@ -8,12 +8,14 @@ const Intro = () => {
 
 	useEffect(() => {
 		const mask = document.querySelector('.mask')
-		setTimeout(() => {
-			mask.style.opacity = '0'
-		}, 300);
-		mask.addEventListener('transitionend', () => {
-			mask.style.display = 'none'
-		});
+		window.addEventListener('load', () => {
+			setTimeout(() => {
+				mask.style.opacity = '0'
+			}, 300);
+			mask.addEventListener('transitionend', () => {
+				mask.style.display = 'none'
+			})
+		})
 
 		const slides = [
 			'../../../public/bg1.jpg',
