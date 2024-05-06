@@ -1,5 +1,5 @@
 .wrapper{
-	height: 100svh;
+	height: 100dvh;
 	transition: 1.5s;
 	background-image: url('../../../public/bg1.jpg');
 	background-position: center;
@@ -11,7 +11,7 @@
 .text{
 	display: flex;
 	flex-direction: column;
-	padding-top: 30vh;
+	padding-top: 30dvh;
 	gap: 10px;
 }
 .wrapper button{
@@ -69,9 +69,6 @@
 		padding-left: 20px;
 		padding-right: 20px;
 	}
-	/* .text{
-		padding-top: 20vh;
-	} */
 	.wrapper button{
 		margin-top: 20px;
 	}
