@@ -4,7 +4,6 @@ import {useNavigate} from 'react-router-dom'
 
 const Intro = () => {
 	const nav = useNavigate()
-	window.scrollTo(0, 0)
 	
 	useEffect(() => {
 		const mask = document.querySelector('.mask')
@@ -14,6 +13,7 @@ const Intro = () => {
 		mask.addEventListener('transitionend', () => {
 			mask.style.display = 'none'
 		})
+		window.scrollTo(0, 0)
 
 		const slides = [
 			'../../../public/bg1.jpg',
