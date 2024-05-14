@@ -37,9 +37,11 @@
 .inp h3{
 	color: white;
 }
-.inp:hover{
-	transition: 0.4s ease;
-	background-color: #323232;
+@media(hover:hover){
+	.inp:hover{
+		transition: 0.4s ease;
+		background-color: #323232;
+	}
 }
 .inp input:checked, .other_city input:checked{
 	background-color: #81DBE1;

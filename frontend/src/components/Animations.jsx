@@ -29,9 +29,6 @@ const Animations = () => {
 		if(location.pathname !== '/'){
 			alert('Данные были сброшены')
 			nav('/')
-			// setTimeout(() => {
-				// 	location.reload()
-			// }, 100)
 		}
 	}
 }
