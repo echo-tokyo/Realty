@@ -13,7 +13,6 @@ const Intro = () => {
 		mask.addEventListener('transitionend', () => {
 			mask.style.display = 'none'
 		})
-		window.scrollTo(0, 0)
 
 		const slides = [
 			'../../../public/bg1.jpg',

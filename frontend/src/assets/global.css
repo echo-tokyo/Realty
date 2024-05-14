@@ -8,6 +8,7 @@ html, body{
 	height: 100%;
 	user-select: none;
 	overflow: hidden !important;
+	touch-action: none; 
 }
 .content{
 	padding-left: 160px;

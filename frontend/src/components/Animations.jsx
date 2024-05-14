@@ -2,6 +2,10 @@ import { useNavigate } from 'react-router'
 
 const Animations = () => {
 	const nav = useNavigate()
+
+	document.addEventListener('gesturestart', function(event) {
+		event.preventDefault();
+	});
 	
 	setTimeout(() => {
 		function onEntry(entry) {
@@ -20,25 +24,16 @@ const Animations = () => {
 			observer.observe(elm)
 		}
 	}, 100)
-	window.scrollTo(0,0)
-
+	
 	window.onload = () => {
 		if(location.pathname !== '/'){
 			alert('Данные были сброшены')
 			nav('/')
-			setTimeout(() => {
-				location.reload()
-			}, 100)
+			// setTimeout(() => {
+				// 	location.reload()
+			// }, 100)
 		}
 	}
-
-	document.addEventListener('touchmove', function(event) {
-		event = event.originalEvent || event;
-	
-		if(event.scale > 1) {
-			event.preventDefault();
-		}
-	}, false);
 }
 
 export default Animations
